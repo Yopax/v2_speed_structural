@@ -12,14 +12,7 @@ function OnePre() {
           determina las dimensiones iniciales de los elementos estructurales.
           Estas dimensiones preliminares son fundamentales para permitir un
           Análisis Estructural que cumpla lo establecido por las las normas
-          Peruanas (José Alberto, 2022). Como dijo el ingeniero Alberto el
-          predimensionamiento es darle dimensiones tentativas a los elementos
-          estructurales, si realizamos un buen predimensionamiento podemos
-          lograr que las dimensiones tentativas sean las finales, y así ahorrar
-          tiempo, esto dependerá mucho de la experiencia del Ingeniero. Ademas,
-          se emplearon formulas y criterios del ingeniero Antonio Blanco Blasco
-          de su libro `Estructuración y diseño de edificaciones de concreto
-          armado`.
+          Peruanas (José Alberto, 2022).
         </p>
       </div>
     </>

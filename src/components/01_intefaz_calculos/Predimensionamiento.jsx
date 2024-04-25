@@ -3,7 +3,7 @@ import React from "react";
 import { useGeneralContext } from "@/app/context/GeneralContext";
 import { useEffect, useState } from "react";
 
-const commonInputClasses = " dark:text-white text-gray-700 border border-solid rounded-md text-center border-gray-300 w-[120px] text-xs py-1";
+const commonInputClasses = " dark:text-white text-gray-700 border border-solid rounded-md justify-center items-center text-center border-gray-300 w-[100px] text-xs py-1";
 const claseOne = "font-medium text-gray-900 font justify-between  text-xs mx-2";
 const subTitle = "text-xs text-white font-bold my-2";
 const claseTwo = "text-xs text-white font-medium mx-2 ";
@@ -168,9 +168,6 @@ const acolumnofinal = Math.ceil(Math.sqrt(areaColumna) / 5) * 5
    const zapataexcentrica = pservicio3/(tipoSuelo*capacidadAdmisible);
    const azapataexcentrica = Math.ceil(Math.sqrt(zapataexcentrica) / 5) * 5
 
-
-   
-
   return (
     <>
       <div className="w-[75%] m-auto">
@@ -211,6 +208,9 @@ const acolumnofinal = Math.ceil(Math.sqrt(areaColumna) / 5) * 5
             </div>
           </div>
           <div className="overflow-x-auto my-4">
+            <p className="text-xs font-medium text-emerald-700 mb-2">
+              Resultados Previos:
+            </p>
             <table className="table ">
               <thead>
                 <tr className="text-center ">
@@ -231,7 +231,7 @@ const acolumnofinal = Math.ceil(Math.sqrt(areaColumna) / 5) * 5
                 </tr>
               </tbody>
             </table>
-            <p className="text-xs dark:text-red-500">
+            <p className=" text-xs dark:text-red-500">
               Recomendación : en la losa aligerada para los primeros pisos
               asumimos {roundedValue} cm y para el ultimo piso consideramos{" "}
               {roundedValue - 5}cm.
@@ -246,234 +246,242 @@ const acolumnofinal = Math.ceil(Math.sqrt(areaColumna) / 5) * 5
         </div>
       </div>
       <div className="w-[75%] m-auto">
-        <hr className="my-2" />      
+        <hr className="my-2" />
         <div className="flex max-[420px]:flex-col space-x-8 max-[420px]:space-x-0">
-        <div className="my-2 w-[390px] max-[420px]:w-full bg-emerald-700  p-4 rounded-md">
-          <p className={subTitle}>Vigas- Ingresa los datos solicitados:</p>
+          <div className="my-2 w-[390px] max-[420px]:w-full bg-emerald-700  p-4 rounded-md">
+            <p className={subTitle}>Vigas- Ingresa los datos solicitados:</p>
 
-          <div className="flex my-4 justify-between">
-            <label className={claseOne}>Ln - Viga en el eje x-x:</label>
-            <input
-              className={commonInputClasses}
-              placeholder="cm"
-              value={inputValue8}
-              onChange={(e) => updateInputValue8(e.target.value)}
-              type="number"
-            />
-          </div>
-          <div className="flex my-4 justify-between">
-            <label className={claseOne}>Ln - Viga en el eje y-y:</label>
-            <input
-              className={commonInputClasses}
-              placeholder="cm"
-              value={inputValue9}
-              onChange={(e) => updateInputValue9(e.target.value)}
-              type="number"
-            />
-          </div>
-          <p className={subTitle}>Columnas- Ingresa los datos solicitados:</p>
-          <div className="flex my-4 justify-between">
-            <label className={claseOne}>Numero de pisos:</label>
-            <input
-              className={commonInputClasses}
-              placeholder="und"
-              value={inputValue2}
-              onChange={(e) => updateInputValue2(e.target.value)}
-              type="number"
-            />
-          </div>
-          <div className="flex my-4 justify-between">
-            <label className={claseOne}>Carga de la Edificación(P):</label>
-            <input
-              className={commonInputClasses}
-              placeholder="kgf/m2"
-              value={servicio}
-              onChange={(e) => updateServicio(e.target.value)}
-              type="number"
-            />
-          </div>
-          <div className="flex my-4 justify-between">
-            <label className={claseOne}>Fuerza de Compresión(fc):</label>
-            <input
-              className={commonInputClasses}
-              placeholder="kgf/cm2"
-              value={inputFc}
-              onChange={(e) => updateInputFc(e.target.value)}
-              type="number"
-            />
-          </div>
+            <div className="flex my-4 justify-between">
+              <label className={claseOne}>Ln - Viga en el eje x-x:</label>
+              <input
+                className={commonInputClasses}
+                placeholder="cm"
+                value={inputValue8}
+                onChange={(e) => updateInputValue8(e.target.value)}
+                type="number"
+              />
+            </div>
+            <div className="flex my-4 justify-between">
+              <label className={claseOne}>Ln - Viga en el eje y-y:</label>
+              <input
+                className={commonInputClasses}
+                placeholder="cm"
+                value={inputValue9}
+                onChange={(e) => updateInputValue9(e.target.value)}
+                type="number"
+              />
+            </div>
+            <p className={subTitle}>Columnas- Ingresa los datos solicitados:</p>
+            <div className="flex my-4 justify-between">
+              <label className={claseOne}>Numero de pisos:</label>
+              <input
+                className={commonInputClasses}
+                placeholder="und"
+                value={inputValue2}
+                onChange={(e) => updateInputValue2(e.target.value)}
+                type="number"
+              />
+            </div>
+            <div className="flex my-4 justify-between">
+              <label className={claseOne}>Carga de la Edificación(P):</label>
+              <input
+                className={commonInputClasses}
+                placeholder="kgf/m2"
+                value={servicio}
+                onChange={(e) => updateServicio(e.target.value)}
+                type="number"
+              />
+            </div>
+            <div className="flex my-4 justify-between">
+              <label className={claseOne}>Fuerza de Compresión(fc):</label>
+              <input
+                className={commonInputClasses}
+                placeholder="kgf/cm2"
+                value={inputFc}
+                onChange={(e) => updateInputFc(e.target.value)}
+                type="number"
+              />
+            </div>
 
-          <div className="flex my-4 justify-between">
-            <label className={claseOne}>AT - Columna Centrada:</label>
-            <input
-              className={commonInputClasses}
-              placeholder="m2"
-              value={inputValue10}
-              onChange={(e) => updateInputValue10(e.target.value)}
-              type="number"
-            />
+            <div className="flex my-4 justify-between">
+              <label className={claseOne}>AT - Columna Centrada:</label>
+              <input
+                className={commonInputClasses}
+                placeholder="m2"
+                value={inputValue10}
+                onChange={(e) => updateInputValue10(e.target.value)}
+                type="number"
+              />
+            </div>
+            <div className="flex my-4 justify-between">
+              <label className={claseOne}>AT - Columna esquinada:</label>
+              <input
+                className={commonInputClasses}
+                placeholder="m2"
+                value={inputValue11}
+                onChange={(e) => updateInputValue11(e.target.value)}
+                type="number"
+              />
+            </div>
+            <div className="flex my-4 justify-between">
+              <label className={claseOne}>AT - Columna excéntrica:</label>
+              <input
+                className={commonInputClasses}
+                placeholder="m2"
+                value={inputValue12}
+                onChange={(e) => updateInputValue12(e.target.value)}
+                type="number"
+              />
+            </div>
           </div>
-          <div className="flex my-4 justify-between">
-            <label className={claseOne}>AT - Columna esquinada:</label>
-            <input
-              className={commonInputClasses}
-              placeholder="m2"
-              value={inputValue11}
-              onChange={(e) => updateInputValue11(e.target.value)}
-              type="number"
-            />
+          <div className="overflow-x-auto my-4">
+            <p className="text-xs font-medium text-emerald-700 mb-2">
+              Resultados Previos:
+            </p>
+            <table className="table ">
+              <thead>
+                <tr className="text-center  ">
+                  <th></th>
+                  <th>Viga eje x - x</th>
+                  <th>Vigas eje y - y</th>
+                  <th>Columna Centrada</th>
+                  <th>Columna Esquinada</th>
+                  <th>Columna Excéntrica</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-base-200 text-center text-xs">
+                  <th>Altura</th>
+                  <td>{vigax}cm</td>
+                  <td>{vigay}cm</td>
+                  <td>{acolumnofinal}cm</td>
+                  <td>{acolumnofinal2}cm</td>
+                  <td>{acolumnofinal3}cm</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr className="bg-base-200 text-center text-xs">
+                  <th>Base</th>
+                  <td>{vigax / 2}cm</td>
+                  <td>{vigay / 2}cm</td>
+                  <td>{acolumnofinal}cm</td>
+                  <td>{acolumnofinal2}cm</td>
+                  <td>{acolumnofinal3}cm</td>
+                </tr>
+              </tbody>
+            </table>
+            <p className=" font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
+              Las formulas utilizadas para calcular las vigas es ta dada por,
+              para la altura: ln/10 y para la base: la altura /2, esto aplica
+              para ambas direcciones.
+            </p>
+            <p className="font2 text-xs mt-2 text-slate-700 underline dark:text-slate-400">
+              Para las columnas centradas:
+            </p>
+            <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
+              pservicio = carga de la edificacion(P)*AT - Columna Centrada:*N de
+              pisos; <br />
+              AreaColumna = (pservicio/(0.45*f´c del concreto))
+            </p>
+            <p className="font2 text-xs mt-2 text-slate-700 underline dark:text-slate-400">
+              Para las columnas excentricas:
+            </p>
+            <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
+              pservicio = carga de la edificacion(P)*AT - Columna excentrica:*N
+              de pisos; <br />
+              AreaColumna = (pservicio/(0.35*f´c del concreto))
+            </p>
+            <p className="font2 text-xs mt-2 text-slate-700 underline dark:text-slate-400">
+              Para las columnas esquinadas:
+            </p>
+            <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
+              pservicio = carga de la edificacion(P)*AT - Columna esquinada:*N
+              de pisos; <br />
+              AreaColumna = (pservicio/(0.35*f´c del concreto))
+            </p>
           </div>
-          <div className="flex my-4 justify-between">
-            <label className={claseOne}>AT - Columna excéntrica:</label>
-            <input
-              className={commonInputClasses}
-              placeholder="m2"
-              value={inputValue12}
-              onChange={(e) => updateInputValue12(e.target.value)}
-              type="number"
-            />
-          </div>
-        </div>
-        <div className="overflow-x-auto my-4">
-          <table className="table ">
-            <thead>
-              <tr className="text-center  ">
-                <th></th>
-                <th>Viga eje x - x</th>
-                <th>Vigas eje y - y</th>
-                <th>Columna Centrada</th>
-                <th>Columna Esquinada</th>
-                <th>Columna Excéntrica</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="bg-base-200 text-center text-xs">
-                <th>Altura</th>
-                <td>{vigax}cm</td>
-                <td>{vigay}cm</td>
-                <td>{acolumnofinal}cm</td>
-                <td>{acolumnofinal2}cm</td>
-                <td>{acolumnofinal3}cm</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr className="bg-base-200 text-center text-xs">
-                <th>Base</th>
-                <td>{vigax / 2}cm</td>
-                <td>{vigay / 2}cm</td>
-                <td>{acolumnofinal}cm</td>
-                <td>{acolumnofinal2}cm</td>
-                <td>{acolumnofinal3}cm</td>
-              </tr>
-            </tbody>
-          </table>
-          <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
-            Las formulas utilizadas para calcular las vigas es ta dada por, para
-            la altura: ln/10 y para la base: la altura /2, esto aplica para
-            ambas direcciones.
-          </p>
-          <p className="font2 text-xs mt-2 text-slate-700 underline dark:text-slate-400">
-            Para las columnas centradas:
-          </p>
-          <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
-            pservicio = carga de la edificacion(P)*AT - Columna Centrada:*N de
-            pisos; <br />
-            AreaColumna = (pservicio/(0.45*f´c del concreto))
-          </p>
-          <p className="font2 text-xs mt-2 text-slate-700 underline dark:text-slate-400">
-            Para las columnas excentricas:
-          </p>
-          <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
-            pservicio = carga de la edificacion(P)*AT - Columna excentrica:*N de
-            pisos; <br />
-            AreaColumna = (pservicio/(0.35*f´c del concreto))
-          </p>
-          <p className="font2 text-xs mt-2 text-slate-700 underline dark:text-slate-400">
-            Para las columnas esquinadas:
-          </p>
-          <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
-            pservicio = carga de la edificacion(P)*AT - Columna esquinada:*N de
-            pisos; <br />
-            AreaColumna = (pservicio/(0.35*f´c del concreto))
-          </p>
-        </div>
-      </div>
-      </div>
-
-      <hr className="my-2" />
-      <div className="flex max-[420px]:flex-col space-x-8 max-[420px]:space-x-0 w-[75%] m-auto">
-        <div className="my-4  bg-emerald-700 w-[320px] p-4 rounded-md">
-          <p className={subTitle}>Zapatas - Ingresa los datos solicitados:</p>
-          <div className="flex w-[290px] justify-between my-4">
-            <label className={claseOne}>Coeficiente del suelo(k):</label>
-            <input
-              className={commonInputClasses}
-              placeholder="1.0, 0.9, 0.8, 0.7 "
-              value={tipoSuelo}
-              onChange={(e) => updateTipoSuelo(e.target.value)}
-              type="number"
-            />
-          </div>
-          <div className="flex w-[290px] justify-between my-4">
-            <label className={claseOne}>Capacidad admisible:</label>
-            <input
-              className={commonInputClasses}
-              placeholder="kg/cm2"
-              value={capacidadAdmisible}
-              onChange={(e) => updatCapacidadAdmisible(e.target.value)}
-              type="number"
-            />
-          </div>
-        </div>
-        <div className="overflow-x-auto my-2">
-          <table className="table table-xs ">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Zapata centrada</th>
-                <th>Zapata esquinada</th>
-                <th>Zapata excéntrica</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>Altura(h)</th>
-                <td>50 cm</td>
-                <td>50 cm </td>
-                <td>50 cm</td>
-              </tr>
-              <tr>
-                <th>size x</th>
-                <td>{azapatacentrada}cm</td>
-                <td>{azapataesquinada}cm</td>
-                <td>{azapataexcentrica}cm</td>
-              </tr>
-              <tr>
-                <th>size y</th>
-                <td>{azapatacentrada}cm</td>
-                <td>{azapataesquinada}cm</td>
-                <td>{azapataexcentrica}cm</td>
-              </tr>
-            </tbody>
-            <tfoot></tfoot>
-          </table>
-          <p className="font2 text-xs text-cyan-600">
-            Recomendación : la altura de la zapata sera de (50cm) es una altura
-            tentativa, por favor verificar por punzonamiento.
-          </p>
-          <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-400">
-            La formula para calcular las zapatas es la siguiente: Area de de la
-            zapata = pservicio/(coeficiente del suelo * la carga admisible)
-          </p>
-          <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-400">
-            Siendo pservicio, el calculo para cada tipo de columna, ejem: si se
-            requiere calcular la zapata centrada se debe utilizar el pservicio
-            de la columna centrada, este dato el programa ya lo calcula y
-            utiliza internamente, por lo que no tendría mayor relevancia.
-          </p>
         </div>
       </div>
-
+      <div className="w-[75%] m-auto">
+        <hr className="my-2" />
+        <div className="flex max-[420px]:flex-col space-x-8 max-[420px]:space-x-0 ">
+          <div className="my-2 w-[660px] max-[420px]:w-full bg-emerald-700  p-4 rounded-md">
+            <p className={subTitle}>Zapatas - Ingresa los datos solicitados:</p>
+            <div className="flex my-4 justify-between">
+              <label className={claseOne}>Coeficiente del suelo(k):</label>
+              <input
+                className={commonInputClasses}
+                placeholder="1.0, 0.9, 0.8, 0.7 "
+                value={tipoSuelo}
+                onChange={(e) => updateTipoSuelo(e.target.value)}
+                type="number"
+              />
+            </div>
+            <p className={subTitle}>Para la losa maciza bidimensional</p>
+            <div className="flex my-4 justify-between">
+              <label className={claseOne}>Capacidad admisible:</label>
+              <input
+                className={commonInputClasses}
+                placeholder="kg/cm2"
+                value={capacidadAdmisible}
+                onChange={(e) => updatCapacidadAdmisible(e.target.value)}
+                type="number"
+              />
+            </div>
+          </div>
+          <div className="overflow-x-auto my-2">
+            <p className="text-xs font-medium text-emerald-700 mb-2">
+              Resultados Previos:
+            </p>
+            <table className="table table-xs ">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Zapata centrada</th>
+                  <th>Zapata esquinada</th>
+                  <th>Zapata excéntrica</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Altura(h)</th>
+                  <td>50 cm</td>
+                  <td>50 cm </td>
+                  <td>50 cm</td>
+                </tr>
+                <tr>
+                  <th>size x</th>
+                  <td>{azapatacentrada}cm</td>
+                  <td>{azapataesquinada}cm</td>
+                  <td>{azapataexcentrica}cm</td>
+                </tr>
+                <tr>
+                  <th>size y</th>
+                  <td>{azapatacentrada}cm</td>
+                  <td>{azapataesquinada}cm</td>
+                  <td>{azapataexcentrica}cm</td>
+                </tr>
+              </tbody>
+              <tfoot></tfoot>
+            </table>
+            <p className="font2 text-xs text-cyan-600">
+              Recomendación : la altura de la zapata sera de (50cm) es una
+              altura tentativa, por favor verificar por punzonamiento.
+            </p>
+            <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-400">
+              La formula para calcular las zapatas es la siguiente: Area de de
+              la zapata = pservicio/(coeficiente del suelo * la carga admisible)
+            </p>
+            <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-400">
+              Siendo pservicio, el calculo para cada tipo de columna, ejem: si
+              se requiere calcular la zapata centrada se debe utilizar el
+              pservicio de la columna centrada, este dato el programa ya lo
+              calcula y utiliza internamente, por lo que no tendría mayor
+              relevancia.
+            </p>
+          </div>
+        </div>
+      </div>
       <div className="w-[75%] m-auto">
         <hr className=" my-2" />
         <p className="text-lg max-[420px]:text-center text-emerald-700 font-bold mt-6 mb-2">
@@ -718,6 +726,16 @@ const acolumnofinal = Math.ceil(Math.sqrt(areaColumna) / 5) * 5
           />
         </div>
       </div>
+      <div className="flex w-full space-y-2">
+        <div className="flex my-8 w-full items-center justify-center">
+          <img
+            className="h-[280px] w-[55%] max-sm:w-[75%]"
+            src="https://i.imgur.com/UdDH2pa.jpg"
+            alt="referencia"
+          />
+        </div>
+      </div>
+      
     </>
   );
 }
