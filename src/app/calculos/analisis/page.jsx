@@ -6,6 +6,7 @@ import OnePre from '@/components/01_intefaz_calculos/OnePre'
 import React from 'react'
 import { ContextOneProvider } from "@/app/context/GeneralContext";
 import Predimensionamiento from '@/components/01_intefaz_calculos/Predimensionamiento'
+import CalculoNodos from '@/components/01_intefaz_calculos/CalculoNodos'
 
 function page() {
   return (
@@ -15,7 +16,9 @@ function page() {
         <Intro />
         <OnePre />
         <Predimensionamiento />
+        <CalculoNodos />
         <ComponentContext3 />
+        
       </ContextOneProvider>
     </>
   );

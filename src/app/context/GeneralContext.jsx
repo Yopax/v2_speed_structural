@@ -63,6 +63,14 @@ export const ContextOneProvider = ({ children }) => {
   const [dx, setDx] = useState("");
   const [dy, setDy] = useState("");
 
+    //NODOS
+    const [h1, setH1] = useState("");
+    const [h2, setH2] = useState("");
+    const [h3, setH3] = useState("");
+    const [fcol, setFcol] = useState("");
+    const [fvig, setFvig] = useState("");
+    const [v1, setV1] = useState("");
+
   //Columnas
   const [nc, setNc] = useState("");
   const [pec, setPec] = useState("");
@@ -89,7 +97,24 @@ export const ContextOneProvider = ({ children }) => {
   const [dx_t, setDx_t] = useState("");
   const [dy_t, setDy_t] = useState("");
 
-
+  const updateH1 = (value) => {
+    setH1(value);
+  };
+  const updateH2 = (value) => {
+    setH2(value);
+  };
+  const updateH3 = (value) => {
+    setH3(value);
+  };
+  const updateFcol = (value) => {
+    setFcol(value);
+  };
+  const updateFvig = (value) => {
+    setFvig(value);
+  };
+  const updateV1 = (value) => {
+    setV1(value);
+  };
 
 
 
@@ -208,7 +233,8 @@ export const ContextOneProvider = ({ children }) => {
         updateOcupacionUso,updateServicio, inputFc, updateInputFc, tipoSuelo, updateTipoSuelo, capacidadAdmisible, updatCapacidadAdmisible
         ,updateNp,updateCa,updateDx,updateDy,updateNc,updatePec,updateDx_col,updateDy_col,updateL_col,updateNvx,updateDx_vgx,updateDy_vgx,updateL_vgx, 
         updateNvy,updateDx_vgy,updateDy_vgy,updateL_vgy,updateCv,updateDx_t,updateDy_t, np, ca, dx, dy, nc, pec, dx_col, dy_col, l_col, nvx, dx_vgx, dy_vgx, 
-        l_vgx, nvy, dx_vgy, dy_vgy, l_vgy, cv, dx_t, dy_t, cvr, updateCvr, perimetroA, perimetroB, updatePerimetroA, updatePerimetroB,
+        l_vgx, nvy, dx_vgy, dy_vgy, l_vgy, cv, dx_t, dy_t, cvr, updateCvr, perimetroA, perimetroB, updatePerimetroA, updatePerimetroB,h1, h2, h3, updateH1, updateH2, updateH3,
+        fcol, updateFcol, fvig, updateFvig, v1, updateV1
         
       }}
     >

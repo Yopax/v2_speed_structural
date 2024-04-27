@@ -3183,7 +3183,7 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
 
       <div className="flex flex-wrap ">
         <div className="max-sm:m-auto max-sm:w-full max-sm:text-center">
-          <p className="max-sm:text-sm  max-sm:p-1 mt-4 font-medium text-white rounded-md px-2 bg-emerald-700">
+          <p className="max-sm:text-sm  max-sm:p-1 mt-4 font-medium  rounded-md">
             Predimensionamiento:
           </p>
         </div>
@@ -3412,7 +3412,7 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
       </div>
 
       <div className="max-sm:m-auto ">
-      <p className="w-[170px] max-sm:w-full max-sm:text-sm max-sm:text-center max-sm:p-1 mt-6 font-medium text-white rounded-md px-2 bg-emerald-700">
+      <p className="w-[170px] max-sm:w-full max-sm:text-sm max-sm:text-center max-sm:p-1 mt-2 font-medium rounded-md">
             Metrado de Cargas:
       </p>
         <button
@@ -3485,10 +3485,10 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
         </dialog>
 
         <div>
-          <p className="mt-4 text-sm text-red-600 font-bold">
+          <p className="mt-4 text-xs font-bold">
             Ultimo Piso (piso{inputValue2}:)
           </p>
-          <p className="font-semibold text-xs">Carga Muerta</p>
+          
           <div className="overflow-x-auto">
           <hr className="my-2 border-slate-300" />
             <table className="table table-xs ">
@@ -3521,8 +3521,6 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
             </p>
             <hr className="my-2 border-slate-300" />
           </div>
-          <p className=" text-xs font-semibold">Carga Viva</p>
-          <hr className="my-2 border-slate-300" />
           <table className="table table-xs ">
             <thead>
               <tr>
@@ -3532,7 +3530,7 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
             </thead>
             <tbody>
               <tr>
-                <th>Cv</th>
+                <th>CV</th>
                 <td>{resultado_redondeado5}</td>
               </tr>
             </tbody>
@@ -3550,11 +3548,10 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
         </div>
 
         <div>
-          <p className="font2 mt-4 text-sm text-red-600 font-bold">
+          <p className="font2 mt-4 text-xs font-bold">
             Pisos itermedios (son todos los pisos sin tener en cuenta el ultimo
             ni el primero:)
           </p>
-          <p className="text-xs font-semibold">Carga Muerta</p>
           <div className="overflow-x-auto">
           <hr className="my-2 border-slate-300" />
             <table className="table table-xs ">
@@ -3587,8 +3584,6 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
             </p>
             <hr className="my-2 border-slate-300" />
           </div>
-          <p className="text-xs font-semibold">Carga Viva</p>
-          <hr className="my-2 border-slate-300" />
           <table className="table table-xs ">
             <thead>
               <tr>
@@ -3598,7 +3593,7 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
             </thead>
             <tbody>
               <tr>
-                <th>Cv</th>
+                <th>CV</th>
                 <td>{resultadocvpinter}</td>
               </tr>
             </tbody>
@@ -3615,10 +3610,9 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
           <hr className="my-2 border-slate-300" />
         </div>
         <div>
-          <p className="mt-4 text-sm text-red-600 font-bold">
+          <p className="mt-4 text-xs font-bold">
             Pisos Primer piso
           </p>
-          <p className="text-xs font-semibold">Carga Muerta</p>
           <div className="overflow-x-auto  mt-2">
           <hr className="my-2 border-slate-300" />
             <table className="table table-xs ">
@@ -3651,8 +3645,6 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
             </p>
             <hr className="my-2 border-slate-300" />
           </div>
-          <p className="text-xs font-semibold ">Carga Viva</p>
-          <hr className="my-2 border-slate-300" />
           <table className="table table-xs ">
             <thead>
               <tr>
@@ -3662,7 +3654,7 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
             </thead>
             <tbody>
               <tr>
-                <th>Cv</th>
+                <th>CV</th>
                 <td>{resultadocvpinter}</td>
               </tr>
             </tbody>
