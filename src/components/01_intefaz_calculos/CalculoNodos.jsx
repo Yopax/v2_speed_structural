@@ -216,6 +216,165 @@ for (let i = 0; i < inputValue2; i++) {
 console.log("Rigideces por piso:", rigidezPorPiso);
 
 
+// Definir la matriz de rigidez
+const n = rigidezPorPiso.length;
+
+// Crear la matriz de rigidez y rellenarla con 0s
+const matrizRigidez = [];
+for (let i = 0; i < n; i++) {
+  matrizRigidez[i] = new Array(n).fill(0);
+}
+
+// Asignar los valores de rigidez del array rigidezPorPiso a la diagonal principal en orden inverso
+for (let i = 0; i < n; i++) {
+  matrizRigidez[i][i] = rigidezPorPiso[n - 1 - i];
+}
+
+// Función para imprimir la matriz en un formato legible en la consola
+function imprimirMatriz(matriz) {
+  let resultado = "[\n";
+  for (let i = 0; i < matriz.length; i++) {
+    resultado += "  [ ";
+    for (let j = 0; j < matriz[i].length; j++) {
+      resultado += matriz[i][j];
+      if (j !== matriz[i].length - 1) {
+        resultado += ", ";
+      }
+    }
+    resultado += " ]";
+    if (i !== matriz.length - 1) {
+      resultado += ",\n";
+    } else {
+      resultado += "\n";
+    }
+  }
+  resultado += "]";
+  return resultado;
+}
+
+// Imprimir la matriz de rigidez en formato legible en la consola
+console.log(`Matriz de rigidez 1:\n${imprimirMatriz(matrizRigidez)}`);
+
+const n2 = rigidezPorPiso.length;
+
+// Crear la matriz de rigidez y rellenarla con 1 en la diagonal principal
+const matrizRigidez2 = [];
+for (let i = 0; i < n2; i++) {
+  matrizRigidez2[i] = new Array(n2).fill(1);
+}
+
+// Asignar los valores de rigidez del array rigidezPorPiso a la diagonal superior en orden inverso
+for (let i = 0; i < n2 - 1; i++) {
+  matrizRigidez2[i][i + 1] = rigidezPorPiso[n2 - 2 - i];
+}
+
+// Función para imprimir la matriz en un formato legible en la consola
+function imprimirMatriz(matriz) {
+  let resultado = "[\n";
+  for (let i = 0; i < matriz.length; i++) {
+    resultado += "  [ ";
+    for (let j = 0; j < matriz[i].length; j++) {
+      resultado += matriz[i][j];
+      if (j !== matriz[i].length - 1) {
+        resultado += ", ";
+      }
+    }
+    resultado += " ]";
+    if (i !== matriz.length - 1) {
+      resultado += ",\n";
+    } else {
+      resultado += "\n";
+    }
+  }
+  resultado += "]";
+  return resultado;
+}
+
+// Imprimir la matriz de rigidez en formato legible en la consola
+console.log(`Matriz de rigidez 2:\n${imprimirMatriz(matrizRigidez2)}`);
+
+const n3 = rigidezPorPiso.length;
+
+// Crear la matriz de rigidez y rellenarla con 1s en la diagonal principal
+const matrizRigidez3 = [];
+for (let i = 0; i < n3; i++) {
+  matrizRigidez3[i] = new Array(n3).fill(1);
+}
+
+// Asignar los valores de rigidez del array rigidezPorPiso a la diagonal inferior en orden inverso
+for (let i = 0; i < n3 - 1; i++) {
+  matrizRigidez3[i + 1][i] = rigidezPorPiso[n3 - 2 - i];
+}
+
+// Función para imprimir la matriz en un formato legible en la consola
+function imprimirMatriz(matriz) {
+  let resultado = "[\n";
+  for (let i = 0; i < matriz.length; i++) {
+    resultado += "  [ ";
+    for (let j = 0; j < matriz[i].length; j++) {
+      resultado += matriz[i][j];
+      if (j !== matriz[i].length - 1) {
+        resultado += ", ";
+      }
+    }
+    resultado += " ]";
+    if (i !== matriz.length - 1) {
+      resultado += ",\n";
+    } else {
+      resultado += "\n";
+    }
+  }
+  resultado += "]";
+  return resultado;
+}
+
+// Imprimir la matriz de rigidez en formato legible en la consola
+console.log(`Matriz de rigidez 3:\n${imprimirMatriz(matrizRigidez3)}`);
+
+//calculo de masas
+
+const masasPorPiso = [];
+
+for (let i = 0; i < inputValue2; i++) {
+  let masasPiso;
+
+  if (i === 0) {
+    masasPiso = (p_one/9.81).toFixed(2);
+
+  } else if (i === inputValue2 - 1) {
+
+    masasPiso = (p_two/9.81).toFixed(2);
+  } else {
+
+    masasPiso = (p_three/9.81).toFixed(2);
+  }
+
+  masasPorPiso.push(masasPiso);
+}
+
+console.log("masas por piso:", masasPorPiso);
+
+
+function superponerMatrices(matriz1, matriz2, matriz3) {
+  const resultado = [];
+  for (let i = 0; i < matriz1.length; i++) {
+      resultado[i] = [];
+      for (let j = 0; j < matriz1[0].length; j++) {
+          resultado[i][j] = Math.max(matriz1[i][j], matriz2[i][j], matriz3[i][j]);
+      }
+  }
+  return resultado;
+}
+
+// Superponer las matrices
+const matrizSuperpuesta = superponerMatrices(matrizRigidez, matrizRigidez2, matrizRigidez3);
+
+// Imprimir la matriz superpuesta
+console.log("Matriz Superpuesta:");
+console.log(matrizSuperpuesta);
+
+
+
   return (
     <>
       <div className="flex">
@@ -236,7 +395,9 @@ console.log("Rigideces por piso:", rigidezPorPiso);
         <div className="flex w-[75%] m-auto space-x-10 max-sm:flex-col max-sm:space-x-0  ">
           <div className="bg-emerald-700 rounded-md w-1/3 max-sm:w-full p-4">
             <div className="flex my-4 justify-between px-2 max-sm:px-0">
-              <label className="font-medium text-gray-900 font justify-between  text-xs mx-2">Altura h1</label>
+              <label className="font-medium text-gray-900 font justify-between  text-xs mx-2">
+                Altura h1
+              </label>
               <input
                 className="dark:text-white text-gray-700 border border-solid rounded-md justify-center items-center text-center border-gray-300 w-[100px] text-xs py-1"
                 placeholder="cm"
@@ -246,7 +407,9 @@ console.log("Rigideces por piso:", rigidezPorPiso);
               />
             </div>
             <div className="flex my-4 justify-between px-2 max-sm:px-0">
-              <label className="font-medium text-gray-900 font justify-between  text-xs mx-2">Altura h2</label>
+              <label className="font-medium text-gray-900 font justify-between  text-xs mx-2">
+                Altura h2
+              </label>
               <input
                 className="dark:text-white text-gray-700 border border-solid rounded-md justify-center items-center text-center border-gray-300 w-[100px] text-xs py-1"
                 placeholder="cm"
@@ -256,7 +419,9 @@ console.log("Rigideces por piso:", rigidezPorPiso);
               />
             </div>
             <div className="flex my-4 justify-between px-2 max-sm:px-0">
-              <label className="font-medium text-gray-900 font justify-between  text-xs mx-2">filas columna</label>
+              <label className="font-medium text-gray-900 font justify-between  text-xs mx-2">
+                filas columna
+              </label>
               <input
                 className="dark:text-white text-gray-700 border border-solid rounded-md justify-center items-center text-center border-gray-300 w-[100px] text-xs py-1"
                 placeholder="cm"
@@ -266,7 +431,9 @@ console.log("Rigideces por piso:", rigidezPorPiso);
               />
             </div>
             <div className="flex my-4 justify-between px-2 max-sm:px-0">
-              <label className="font-medium text-gray-900 font justify-between  text-xs mx-2">filas vigas</label>
+              <label className="font-medium text-gray-900 font justify-between  text-xs mx-2">
+                filas vigas
+              </label>
               <input
                 className="dark:text-white text-gray-700 border border-solid rounded-md justify-center items-center text-center border-gray-300 w-[100px] text-xs py-1"
                 placeholder="cm"
@@ -276,7 +443,9 @@ console.log("Rigideces por piso:", rigidezPorPiso);
               />
             </div>
             <div className="flex my-4 justify-between px-2 max-sm:px-0">
-              <label className="font-medium text-gray-900 font justify-between  text-xs mx-2">Size v1 </label>
+              <label className="font-medium text-gray-900 font justify-between  text-xs mx-2">
+                Size v1{" "}
+              </label>
               <input
                 className="dark:text-white text-gray-700 border border-solid rounded-md justify-center items-center text-center border-gray-300 w-[100px] text-xs py-1"
                 placeholder="cm"
@@ -286,17 +455,21 @@ console.log("Rigideces por piso:", rigidezPorPiso);
               />
             </div>
           </div>
-          
+
           <div className="overflow-x-auto w-2/3 max-sm:w-full">
-          <p className="text-xs font-medium text-emerald-700 mb-6 max-sm:my-4">
+            <p className="text-xs font-medium text-emerald-700 mb-6 max-sm:my-4">
               Resultados Previos:
             </p>
             <table className="min-w-full divide-y divide-gray-200">
               <thead>
-                <tr className="text-center">
-                  <th className="px-4 py-2"></th>
-                  <th className="text-xs px-4 py-2">Estimación del Peso (P)</th>
-                  <th className="text-xs px-4 py-2">Rigidez (k)</th>
+                <tr className="">
+                  <th className="py-2"></th>
+                  <th className="text-xs py-2">Peso (tnf)</th>
+                  <th className="text-xs py-2">Rigidez (tnf/m)</th>
+                  <th className="text-xs py-2">
+                    <p>Masas</p>
+                    <p>tnf*seg^2/m</p>
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -306,6 +479,7 @@ console.log("Rigideces por piso:", rigidezPorPiso);
                     <th className="px-4 py-2">{inputValue2 - index}º Piso</th>
                     <td className="px-4 py-2">{pesosPorPiso[index]}</td>
                     <td className="px-4 py-2">{rigidezPorPiso[index]}</td>
+                    <td className="px-4 py-2">{masasPorPiso[index]}</td>
                   </tr>
                 ))}
               </tbody>
@@ -319,8 +493,44 @@ console.log("Rigideces por piso:", rigidezPorPiso);
           vibración.
         </p>
       </div>
+      <div className="flex w-[75%] m-auto space-x-10 max-sm:flex-col max-sm:space-x-0 mb-6">
+        <div className="flex justify-center text-xs max-sm:text-[6px] ">
+          <Matriz matriz={matrizSuperpuesta} />
+        </div>
+        <div>
+          <div className="flex-col">
+            <div className="font-bold">Matriz de Rigidez</div>
+            <p className="text-sm my-4 text-justify">
+              (cambiar esta edescrip)Estimación del Peso (P) según el Artículo
+              26 de la norma E.030, se calcula adicionando a la carga permanente
+              y total de la edificación un porcentaje de la carga viva o
+              sobrecarga, para este caso considere edificaciones de las
+              categorías A y B, tomando el 50% de la carga viva.
+            </p>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
 
 export default CalculoNodos
+
+export const Matriz = ({ matriz }) => {
+  return (
+    <div>
+      <h2 className='text-xs font-medium text-emerald-700 mb-2 max-sm:my-4'>Resultados Previos:</h2>
+      <table>
+        <tbody>
+          {matriz.map((fila, indiceFila) => (
+            <tr key={indiceFila}>
+              {fila.map((valor, indiceColumna) => (
+                <td key={indiceColumna}>{valor}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
