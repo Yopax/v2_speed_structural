@@ -143,6 +143,7 @@ const vigay = inputValue9/10;
 const pservicio = servicio*inputValue10*inputValue2;
 const areaColumna = (pservicio/(0.45*inputFc))
 const acolumnofinal = Math.ceil(Math.sqrt(areaColumna) / 5) * 5
+const acolumnofinalFormateada = acolumnofinal.toFixed(2);
 
 //columna esquinada
   const pservicio2 = servicio*inputValue11*inputValue2;
@@ -496,6 +497,15 @@ const acolumnofinal = Math.ceil(Math.sqrt(areaColumna) / 5) * 5
           formulas y criterios del ingeniero Angel san bartolome de su libro
           `Análisis de edificios`.
         </p>
+        <div className="flex w-full space-y-2">
+        <div className="flex my-8 w-full items-center justify-center">
+          <img
+            className="h-[280px] w-[55%] max-sm:w-full"
+            src="https://i.imgur.com/2VWy5cT.jpeg"
+            alt="referencia"
+            />
+        </div>
+        </div>
       </div>
       <div className="w-[75%] m-auto grid grid-cols-5 max-[1024px]:grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1 mt-8 mb-8 ">
         <div className={claseDivOne}>
@@ -648,7 +658,7 @@ const acolumnofinal = Math.ceil(Math.sqrt(areaColumna) / 5) * 5
           />
         </div>
         <div className={claseDivOne}>
-          <p className="mb-10">Carga Viva</p>
+          <p className="mb-2">Carga Viva</p>
           <label className={claseTwo}>CV techo ultimo piso :</label>
           <input
             className={commonInputClasses}
@@ -681,33 +691,6 @@ const acolumnofinal = Math.ceil(Math.sqrt(areaColumna) / 5) * 5
             value={dy_t}
             onChange={(e) => updateDy_t(e.target.value)}
           />
-        </div>
-        <div className={claseDivOne}>
-          <p className="mb-2">Datos extras</p>
-          <label className={claseTwo}>Autor:</label>
-          <input
-            className={commonInputClasses}
-            type="text"
-            placeholder="Barreto Darli"
-            value={inputValue1}
-            onChange={(e) => updateInputValue1(e.target.value)}
-          />
-          <label className={claseTwo}>Ocupación/Uso</label>
-          <input
-            className={commonInputClasses}
-            type="text"
-            placeholder="Escuelas, etc"
-            value={ocupacionUso}
-            onChange={(e) => updateOcupacionUso(e.target.value)}
-          />
-          <label className={claseTwo}>Altura de entrepiso:</label>
-          <input
-            className={commonInputClasses}
-            type="number"
-            placeholder="m"
-            value={inputValue4}
-            onChange={(e) => updateInputValue4(e.target.value)}
-          />
           <label className={claseTwo}>Profundidad de desplante:</label>
           <input
             className={commonInputClasses}
@@ -716,26 +699,8 @@ const acolumnofinal = Math.ceil(Math.sqrt(areaColumna) / 5) * 5
             value={inputValue5}
             onChange={(e) => updateInputValue5(e.target.value)}
           />
-          <label className={claseTwo}>Espesor de la platea(si tuviera):</label>
-          <input
-            className={commonInputClasses}
-            type="number"
-            placeholder="cm"
-            value={inputValue6}
-            onChange={(e) => updateInputValue6(e.target.value)}
-          />
         </div>
       </div>
-      <div className="flex w-full space-y-2">
-        <div className="flex my-8 w-full items-center justify-center">
-          <img
-            className="h-[280px] w-[55%] max-sm:w-[75%]"
-            src="https://i.imgur.com/UdDH2pa.jpg"
-            alt="referencia"
-          />
-        </div>
-      </div>
-      
     </>
   );
 }

@@ -260,7 +260,7 @@ const n2 = rigidezPorPiso.length;
 // Crear la matriz de rigidez y rellenarla con 1 en la diagonal principal
 const matrizRigidez2 = [];
 for (let i = 0; i < n2; i++) {
-  matrizRigidez2[i] = new Array(n2).fill(1);
+  matrizRigidez2[i] = new Array(n2).fill(0);
 }
 
 // Asignar los valores de rigidez del array rigidezPorPiso a la diagonal superior en orden inverso
@@ -298,7 +298,7 @@ const n3 = rigidezPorPiso.length;
 // Crear la matriz de rigidez y rellenarla con 1s en la diagonal principal
 const matrizRigidez3 = [];
 for (let i = 0; i < n3; i++) {
-  matrizRigidez3[i] = new Array(n3).fill(1);
+  matrizRigidez3[i] = new Array(n3).fill(0);
 }
 
 // Asignar los valores de rigidez del array rigidezPorPiso a la diagonal inferior en orden inverso
@@ -355,22 +355,34 @@ for (let i = 0; i < inputValue2; i++) {
 console.log("masas por piso:", masasPorPiso);
 
 
-function superponerMatrices(matriz1, matriz2, matriz3) {
+function superponerMatrices(matriz1, matriz2, matriz3, rigidezPorPiso) {
   const resultado = [];
-  for (let i = 0; i < matriz1.length; i++) {
-      resultado[i] = [];
-      for (let j = 0; j < matriz1[0].length; j++) {
-          resultado[i][j] = Math.max(matriz1[i][j], matriz2[i][j], matriz3[i][j]);
+  const n = matriz1.length;
+  
+  for (let i = 0; i < n; i++) {
+    resultado[i] = [];
+    for (let j = 0; j < n; j++) {
+      if (i === j) {
+        if (j !== n - 1) {
+          const indiceRigidez = n - 2 - j;
+          let suma = parseFloat(matriz1[i][j]) + parseFloat(rigidezPorPiso[indiceRigidez]);
+          resultado[i][j] = suma.toFixed(2);
+        } else {
+          resultado[i][j] = parseFloat(matriz1[i][j]).toFixed(2);
+        }
+      } else {
+        resultado[i][j] = Math.max(parseFloat(matriz1[i][j]), parseFloat(matriz2[i][j]), parseFloat(matriz3[i][j])).toFixed(2);
       }
+    }
   }
+  
   return resultado;
 }
 
-// Superponer las matrices
-const matrizSuperpuesta = superponerMatrices(matrizRigidez, matrizRigidez2, matrizRigidez3);
+// Llamada a la función superponerMatrices con las matrices matrizRigidez, matrizRigidez2, matrizRigidez3
+const matrizSuperpuesta = superponerMatrices(matrizRigidez, matrizRigidez2, matrizRigidez3, rigidezPorPiso);
 
-// Imprimir la matriz superpuesta
-console.log("Matriz Superpuesta:");
+console.log("Matriz Superpuesta con la diagonal principal sumada con rigidezPorPiso desde el penúltimo valor y redondeada a dos decimales:");
 console.log(matrizSuperpuesta);
 
 
@@ -494,12 +506,12 @@ console.log(matrizSuperpuesta);
         </p>
       </div>
       <div className="flex w-[75%] m-auto space-x-10 max-sm:flex-col max-sm:space-x-0 mb-6">
-        <div className="flex justify-center text-xs max-sm:text-[6px] ">
+        <div className="flex justify-center text-xs">
           <Matriz matriz={matrizSuperpuesta} />
         </div>
         <div>
           <div className="flex-col">
-            <div className="font-bold">Matriz de Rigidez</div>
+            <div className="font-bold mt-4">Matriz de Rigidez</div>
             <p className="text-sm my-4 text-justify">
               (cambiar esta edescrip)Estimación del Peso (P) según el Artículo
               26 de la norma E.030, se calcula adicionando a la carga permanente
@@ -518,14 +530,14 @@ export default CalculoNodos
 
 export const Matriz = ({ matriz }) => {
   return (
-    <div>
-      <h2 className='text-xs font-medium text-emerald-700 mb-2 max-sm:my-4'>Resultados Previos:</h2>
-      <table>
+    <div className="overflow-x-auto">
+      <h2 className="text-xs font-medium text-emerald-700 mb-2 max-sm:my-4">Resultados Previos:</h2>
+      <table className="min-w-full bg-white border border-gray-200">
         <tbody>
           {matriz.map((fila, indiceFila) => (
-            <tr key={indiceFila}>
+            <tr key={indiceFila} className={indiceFila % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
               {fila.map((valor, indiceColumna) => (
-                <td key={indiceColumna}>{valor}</td>
+                <td key={indiceColumna} className="border px-4 py-2">{valor}</td>
               ))}
             </tr>
           ))}

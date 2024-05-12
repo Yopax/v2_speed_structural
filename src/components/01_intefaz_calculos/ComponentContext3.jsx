@@ -10,6 +10,9 @@ import autoTable from 'jspdf-autotable';
 import { saveAs } from 'file-saver';
 import * as docx from 'docx';
 
+const commonInputClasses = " dark:text-white text-gray-700 border border-solid rounded-md justify-center items-center text-center border-gray-300 w-[200px] text-xs py-1";
+
+
 import { TextRun,Document, Packer, Paragraph, Table, TableCell, 
   TableRow, WidthType, Header, Footer, HeadingLevel, 
   AlignmentType, VerticalAlign, BorderStyle, Alignment } from "docx";
@@ -20,7 +23,7 @@ function ComponentContext3() {
     inputValue6,inputValue7,inputValue8,inputValue9,inputValue10,
     inputValue11,inputValue12,ocupacionUso,inputValue14, servicio,inputFc, tipoSuelo, capacidadAdmisible,
     np, ca, dx,dy,nc,pec,dx_col,dy_col,l_col,nvx, dx_vgx, dy_vgx,l_vgx,nvy,dx_vgy,dy_vgy,l_vgy,
-    cv,dx_t,dy_t,cvr  } = useGeneralContext();
+    cv,dx_t,dy_t,cvr,updateInputValue1  } = useGeneralContext();
 
   const { perimetroA, perimetroB } = useGeneralContext();
 
@@ -217,20 +220,26 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
   ];
   
     // Título
+
+    var logo = new Image();
+logo.src = 'https://i.imgur.com/BPtZlMH.png'; // Cambia 'ruta/del/logo.png' por la ruta de tu logo
+doc.addImage(logo, 'PNG', 10, 10, 28, 8); // Ajusta las coordenadas (10, 10) y el tamaño (50, 50) según tu preferencia
+
+
+
     doc.setFontSize(18);
-    doc.text("Informe Final", 85, 10);
+    doc.text("Informe Final", 85, 25);
 
     doc.setFontSize(12);
-    doc.text(`${inputValue1}`, 75, 16);
+    doc.text(`${inputValue1}`, 75, 31);
 
     doc.setFontSize(10);
-      doc.text(`Este informe presenta una edificación aporticada de concreto armado de ${inputValue2} pisos  destinada`, 17, 24);
-      doc.text(`para ${ocupacionUso} cuyas características son:`, 17, 28);
-      doc.text(`
-      Peso específico del concreto: ${pec} T/m^3  
-      Altura de entrepiso (de piso a piso): ${inputValue4}m
-      Profundidad de desplante (contacto con platea): ${inputValue5}cm 
-      Espesor de la platea: ${inputValue6}cm`, 10, 30);
+
+    // Dividir el texto en varias líneas para que se ajuste dentro de los márgenes
+    var textLines = doc.splitTextToSize(`Aunque los cálculos realizados por SpeedStructural se ajustan rigurosamente a las normativas peruanas de construcción y han sido exhaustivamente probados, se recomienda encarecidamente que los usuarios realicen una verificación independiente de los resultados. Esto con el fin de asegurar la precisión y coherencia del análisis estructural efectuado.`, 180);
+    
+    // Agregar las líneas de texto al documento
+    doc.text(textLines, 15, 40);
 
     
   
@@ -315,7 +324,7 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
     });
     // Descripción de la tabla
     doc.setFontSize(8);
-    doc.text(`Total : ${resultado_redondeado + resultado_redondeado2 + resultado_redondeado3 + resultado_redondeado4}`, 14, doc.autoTable.previous.finalY + 3);
+    doc.text(`Total : ${(resultado_redondeado + resultado_redondeado2 + resultado_redondeado3 + resultado_redondeado4).toFixed(2)} TN`, 14, doc.autoTable.previous.finalY + 3);
 
     doc.setFontSize(10);
     doc.text("Carga Viva", 15, doc.autoTable.previous.finalY + 10);
@@ -329,7 +338,7 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
     });
     // Descripción de la tabla
     doc.setFontSize(8);
-    doc.text(`CV+CM : ${resultado_redondeado + resultado_redondeado2 + resultado_redondeado3 + resultado_redondeado4+resultado_redondeado5}`, 14, doc.autoTable.previous.finalY + 3);
+    doc.text(`CV+CM : ${(resultado_redondeado + resultado_redondeado2 + resultado_redondeado3 + resultado_redondeado4 + resultado_redondeado5).toFixed(2)} TN`, 14, doc.autoTable.previous.finalY + 3);
 
     doc.setLineWidth(0.5); // Establecer el ancho de la línea
     doc.line(14, doc.autoTable.previous.finalY + 8, 200, doc.autoTable.previous.finalY + 8);
@@ -348,7 +357,7 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
     });
     // Descripción de la tabla
     doc.setFontSize(8);
-    doc.text(`Total : ${resultado_redondeadop2 + resultado_redondeado2 + resultado_redondeado3 + resultado_redondeado4}`, 14, doc.autoTable.previous.finalY + 3);
+    doc.text(`Total : ${(resultado_redondeadop2 + resultado_redondeado2 + resultado_redondeado3 + resultado_redondeado4).toFixed(2)} TN`, 14, doc.autoTable.previous.finalY + 3);
 
     doc.setFontSize(10);
     doc.text("Carga Viva", 15, doc.autoTable.previous.finalY + 10);
@@ -362,7 +371,7 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
     });
     // Descripción de la tabla
     doc.setFontSize(8);
-    doc.text(`CV+CM: ${resultado_redondeadop2 + resultado_redondeado2 + resultado_redondeado3 + resultado_redondeado4+resultadocvpinter}`, 14, doc.autoTable.previous.finalY + 3);
+    doc.text(`CV+CM: ${(resultado_redondeadop2 + resultado_redondeado2 + resultado_redondeado3 + resultado_redondeado4 + resultadocvpinter).toFixed(2)} TN`, 14, doc.autoTable.previous.finalY + 3);
 
     doc.setLineWidth(0.5); // Establecer el ancho de la línea
     doc.line(14, doc.autoTable.previous.finalY + 8, 200, doc.autoTable.previous.finalY + 8);
@@ -381,7 +390,7 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
     });
     // Descripción de la tabla
     doc.setFontSize(8);
-    doc.text(`Total : ${resultado_redondeadop2 + columnas2 + resultado_redondeado3 + resultado_redondeado4}`, 14, doc.autoTable.previous.finalY + 3);
+    doc.text(`Total : ${(resultado_redondeadop2 + columnas2 + resultado_redondeado3 + resultado_redondeado4).toFixed(2)} TN`, 14, doc.autoTable.previous.finalY + 3);
 
     doc.setFontSize(10);
     doc.text("Carga Viva", 15, doc.autoTable.previous.finalY + 12);
@@ -395,14 +404,21 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
     });
     // Descripción de la tabla
     doc.setFontSize(8);
-    doc.text(`CV+CM: ${resultado_redondeadop2 + columnas2 + resultado_redondeado3 + resultado_redondeado4+resultadocvpinter}`, 14, doc.autoTable.previous.finalY + 3);
+    doc.text(`CV+CM: ${(resultado_redondeadop2 + columnas2 + resultado_redondeado3 + resultado_redondeado4 + resultadocvpinter).toFixed(2)} TN`, 14, doc.autoTable.previous.finalY + 3);
 
     doc.setLineWidth(0.5); // Establecer el ancho de la línea
     doc.line(14, doc.autoTable.previous.finalY + 8, 200, doc.autoTable.previous.finalY + 8);
     //tabla de las cargas totales de cada piso
     const tableCargasTotales = ["", "Ultimo Piso", "Pisos intermedios", "Primer piso"];
-    const tableRows11 = [ ["Cargas Totales", `${resultado_redondeado + resultado_redondeado2 + resultado_redondeado3 + resultado_redondeado4+resultado_redondeado5}`, `${resultado_redondeadop2 + resultado_redondeado2 + resultado_redondeado3 + resultado_redondeado4+resultadocvpinter}`, `${resultado_redondeadop2 + columnas2 + resultado_redondeado3 + resultado_redondeado4+resultadocvpinter}`],];
-    doc.autoTable({
+    const tableRows11 = [
+        [
+            "Cargas Totales",
+            (resultado_redondeado + resultado_redondeado2 + resultado_redondeado3 + resultado_redondeado4 + resultado_redondeado5).toFixed(2),
+            (resultado_redondeadop2 + resultado_redondeado2 + resultado_redondeado3 + resultado_redondeado4 + resultadocvpinter).toFixed(2),
+            (resultado_redondeadop2 + columnas2 + resultado_redondeado3 + resultado_redondeado4 + resultadocvpinter).toFixed(2)
+        ]
+    ];
+        doc.autoTable({
       startY: doc.autoTable.previous.finalY + 15,
       head: [tableCargasTotales],
       body: tableRows11,
@@ -483,12 +499,14 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
     doc.text("Para el techo intermedio: cvr*dx_t*dy_t", 15, 250);
     doc.text(`Resultado: ${cvr}*${dx_t}*${dy_t} = ${resultadocvpinter}`, 15, 255);
 
+    doc.text(`Para mas detalles sobre las formulas empleadas en los cálculos, descargar el manual de uso de la aplicación.`, 15, 282);
+
     doc.save("informe.pdf");
   };
 //DESCARGA CON WORD
   const downloadDocument = async () => {
     const header = new Header({
-        children: [new Paragraph("Impacto del Calentamiento Global")],
+        children: [new Paragraph("Informe Final - Metrado de cargas")],
     });
 
     const footer = new Footer({
@@ -3175,6 +3193,7 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
         <h5 className="text-center m-auto max-sm:text-xs max-sm:w-[142px] text-sm font-medium text-white w-[166px] px-2 bg-emerald-700 rounded-md">
           Resultados Generales
         </h5>
+        
         <h2 className="max-sm:text-xl dark:text-gray-200 font-black text-gray-800 text-4xl text-center items-center mt-6">
           DISEÑO ESTRUCTURAL
         </h2>
@@ -3486,7 +3505,7 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
 
         <div>
           <p className="mt-4 text-xs font-bold">
-            Ultimo Piso (piso{inputValue2}:)
+            Ultimo Piso (piso {inputValue2}:)
           </p>
           
           <div className="overflow-x-auto">
@@ -3514,10 +3533,12 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
             </table>
             <p className="text-xs">
               Total :{" "}
-              {resultado_redondeado +
-                resultado_redondeado2 +
-                resultado_redondeado3 +
-                resultado_redondeado4}
+              {(
+    resultado_redondeado +
+    resultado_redondeado2 +
+    resultado_redondeado3 +
+    resultado_redondeado4
+  ).toFixed(2)}
             </p>
             <hr className="my-2 border-slate-300" />
           </div>
@@ -3536,13 +3557,15 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
             </tbody>
           </table>
           <p className="font2 text-xs">
-            Total General :{" "}
-            {resultado_redondeado +
-              resultado_redondeado2 +
-              resultado_redondeado3 +
-              resultado_redondeado4 +
-              resultado_redondeado5}
-            .
+            Total General + CM :{" "}
+            {(
+    resultado_redondeado +
+    resultado_redondeado2 +
+    resultado_redondeado3 +
+    resultado_redondeado4 +
+    resultado_redondeado5
+  ).toFixed(2)}
+            
           </p>
           <hr className="my-2 border-slate-300" />
         </div>
@@ -3599,13 +3622,13 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
             </tbody>
           </table>
           <p className="font2 text-xs">
-            Total General:{" "}
+            Total General + CM:{" "}
             {resultado_redondeadop2 +
               resultado_redondeado2 +
               resultado_redondeado3 +
               resultado_redondeado4 +
               resultadocvpinter}
-            .
+            
           </p>
           <hr className="my-2 border-slate-300" />
         </div>
@@ -3638,10 +3661,12 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
             </table>
             <p className="font2 text-xs">
               Total :{" "}
-              {resultado_redondeadop2 +
-                columnas2 +
-                resultado_redondeado3 +
-                resultado_redondeado4}
+              {(
+  resultado_redondeadop2 +
+  columnas2 +
+  resultado_redondeado3 +
+  resultado_redondeado4
+).toFixed(2)}
             </p>
             <hr className="my-2 border-slate-300" />
           </div>
@@ -3670,20 +3695,33 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
           </p>
           <hr className="my-2 border-slate-300" />
         </div>
-        <button
-          className="my-2 bg-red-700 hover:bg-red-300 p-2 rounded-lg 
-        text-white font justify-center items-center flex w-full"
-          onClick={generarPDF}
-        >
-          Descargar informe en pdf
-        </button>
-        <button
-          className="bg-blue-700 hover:bg-blue-300 p-2 rounded-lg 
-        text-white font justify-center items-center flex w-full"
-          onClick={downloadDocument}
-        >
-          Descargar informe en docx
-        </button>
+        <div className=" space-x-2 max-sm:text-center max-sm:justify-center">
+                  <label className="text-sm">Ingresa nombre del autor:</label>
+                  <input
+                      className={commonInputClasses}
+                      type="text"
+                      placeholder="Barreto Darli"
+                      value={inputValue1}
+                      onChange={(e) => updateInputValue1(e.target.value)}
+                  />  
+        </div>
+        <div className="flex justify-between mt-5 space-x-2 max-sm:flex-col max-sm:space-x-0 max-sm:space-y-2">
+                  <button
+                      className=" w-[60%] h-10 bg-slate-700 max-sm:text-sm max-sm:w-full hover:bg-red-300 p-2 rounded-lg 
+        text-white font justify-center items-center flex"
+                      onClick={generarPDF}
+                  >
+                      Descargar informe en pdf
+                  </button>
+                  <button
+                      className="bg-slate-700 h-10 max-sm:text-sm max-sm:w-full hover:bg-blue-300 p-2 rounded-lg 
+        text-white font justify-center items-center flex w-[60%]"
+                      onClick={downloadDocument}
+                  >
+                      Descargar informe en docx
+                  </button>    
+        </div>
+
       </div>
     </div>
   );
