@@ -1,8 +1,11 @@
+
 import React from 'react'
 
 function page() {
   return (
-    <div>aslcsssulos</div>
+    <>
+    <h1>sdasd</h1>
+    </>
   )
 }
 
