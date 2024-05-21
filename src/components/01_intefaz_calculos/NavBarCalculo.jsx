@@ -51,8 +51,8 @@ function NavBarCalculo() {
                   whileTap={{ scale: 0.9 }}
                 >
                   <li className={BarMovile}>
-                    <Link href="/formulas" target="blank">
-                      Formulas
+                    <Link href="/calculos/analisis" target="blank">
+                      App
                     </Link>
                   </li>
                 </motion.button>
@@ -99,7 +99,7 @@ function NavBarCalculo() {
                 whileTap={{ scale: 0.9 }}
               >
                 <li className={CenterBar}>
-                  <Link href="/formulas">Formulas</Link>
+                  <Link target='_blank' href="/calculos/analisis">App</Link>
                 </li>
               </motion.button>
               <motion.button

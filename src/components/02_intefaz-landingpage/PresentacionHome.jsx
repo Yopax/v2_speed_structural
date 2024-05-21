@@ -13,7 +13,7 @@ function PresentacionHome() {
             Predimensionamiento y metrado de cargas.
             <br />
           </h1>
-          <p className="max-sm:text-lg  leading-6 mb-2 mt-2 mb1:mx-10">
+          <p className="max-sm:text-sm  leading-6 mb-2 mt-2 mb1:mx-10">
             Speed Structural,tiene como finalidad optimizar el tiempo de calculo
             del predimensionamiento y metrado de cargas para un análisis y diseño sísmico.
           </p>
