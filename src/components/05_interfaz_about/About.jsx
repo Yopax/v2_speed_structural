@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import AboutDescription from './Components/AboutDescription';
+import AboutDescription from '@/components/05_interfaz_about/components/AboutDescription';
 
 function About() {
   return (
