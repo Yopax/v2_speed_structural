@@ -1,5 +1,5 @@
-"use client"
-import React from 'react'
+"use client";
+import React from 'react';
 import AboutDescription from '@/components/05_interfaz_about/components/AboutDescription';
 
 function About() {
@@ -10,4 +10,4 @@ function About() {
   );
 }
 
-export default About
+export default About;
