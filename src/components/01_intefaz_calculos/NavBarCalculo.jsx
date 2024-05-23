@@ -113,7 +113,7 @@ function NavBarCalculo() {
             </ul>
           </div>
           <div className="navbar-end ">
-            <Link href="https://drive.google.com/uc?export=download&id=1Lpx0-9vAiSqdxUTL9IQ_FheY1htgngo6">
+            <Link href="https://drive.google.com/uc?export=download&id=1GCSSfFEDgHazRhXfghiIS3HKh8k00Uyn">
               <motion.button
                 whileHover={{ scale: 0.9 }}
                 whileTap={{ scale: 1.2 }}

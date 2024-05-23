@@ -199,7 +199,7 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
 //DESCARGA CON PDF
   const generarPDF = () => {
     const doc = new jsPDF();
-    const tableLosas = ["", "Losa Aligerada", "Losa Prefabricada Pretensada", "Losa maciza", "Losa maciza Bidirecional" ];
+    const tableLosas = ["", "Losa Aligerada", "Losa Prefabricada Pretensada", "Losa maciza", "Losa maciza Bidireccional" ];
     const tableRows = [ ["Altura(h)", `${roundedValue}cm`, `${roundedValue2}cm`, `${roundedValue3}cm`,`${perimetroNumerico}cm`],];
 
     const tableVigas = ["", "viga eje x-x", "viga eje y-y"];
@@ -207,12 +207,12 @@ const perimetroNumerico = parseFloat(perimetroRedondeado);
     , ["Base", `${vigax/2}cm`, `${vigay/2}cm`]
   ];
 
-    const tableColumnas = ["", "Columna centrada", "Columna esquinada", "Columna excentrica"];
+    const tableColumnas = ["", "Columna centrada", "Columna esquinada", "Columna excéntrica"];
     const tableRows3 = [ ["Altura(h)", `${acolumnofinal}cm`, `${acolumnofinal2}cm`, `${acolumnofinal3}cm`]
     , ["Base", `${acolumnofinal}cm`, `${acolumnofinal2}cm`, `${acolumnofinal3}cm`]
   ];
 
-  const tableZapatas = ["", "Zapata centrada", "Zapata esquinada", "Zapata excentrica"];
+  const tableZapatas = ["", "Zapata centrada", "Zapata esquinada", "Zapata excéntrica"];
     const tableRows4 = [ ["Altura(h)", `50cm`, `50cm`, `50cm`]
     , ["Size x", `${azapatacentrada}cm`, `${azapataesquinada}cm`, `${azapataexcentrica}cm`],
     ["Size y", `${azapatacentrada}cm`, `${azapataesquinada}cm`, `${azapataexcentrica}cm`],
@@ -259,7 +259,7 @@ doc.addImage(logo, 'PNG', 10, 10, 28, 8); // Ajusta las coordenadas (10, 10) y e
     });
     // Descripción de la tabla
     doc.setFontSize(8);
-    doc.text(`Recomendacion : en la losa aligerada para los primeros pisos asumimos ${roundedValue} cm y para el ultimo piso consideramos ${roundedValue - 5}cm.`, 14, doc.autoTable.previous.finalY + 3);
+    doc.text(`Recomendación : en la losa aligerada para los primeros pisos asumimos ${roundedValue} cm y para el ultimo piso consideramos ${roundedValue - 5}cm.`, 14, doc.autoTable.previous.finalY + 3);
 
     // Subtítulo
     doc.setFontSize(10);
@@ -298,7 +298,7 @@ doc.addImage(logo, 'PNG', 10, 10, 28, 8); // Ajusta las coordenadas (10, 10) y e
     });
     // Descripción de la tabla
     doc.setFontSize(8);
-    doc.text(`Recomendacion : la altura de la zapataq (50cm) es una altura tentativa, porfavor verificar por punzonamiento.`, 14, doc.autoTable.previous.finalY + 3);
+    doc.text(`Recomendación : la altura de la zapata (50cm) es una altura tentativa, por favor verificar por punzonamiento.`, 14, doc.autoTable.previous.finalY + 3);
 
 
     doc.addPage();
@@ -444,24 +444,24 @@ doc.addImage(logo, 'PNG', 10, 10, 28, 8); // Ajusta las coordenadas (10, 10) y e
     doc.setFontSize(12);
     doc.text("Formulas empleadas para calcular el predimensionamiento de las columnas", 15, 75);
     doc.setFontSize(10);
-    doc.text("Para las columnas centradas: pservicio = carga de la edificacion(P)*AT - Columna Centrada:*N de pisos; ", 15, 80);
+    doc.text("Para las columnas centradas: pservicio = carga de la edificación(P)*AT - Columna Centrada:*N de pisos; ", 15, 80);
     doc.text("AreaColumna = (pservicio/(0.45*f´c del concreto))", 15, 85 );
-    doc.text("Para las columnas excentricas: pservicio = carga de la edificacion(P)*AT - Columna excentrica:*N de pisos; ", 15, 90);
+    doc.text("Para las columnas excéntricas: pservicio = carga de la edificación(P)*AT - Columna excéntrica:*N de pisos; ", 15, 90);
     doc.text("AreaColumna = (pservicio/(0.35*f´c del concreto))", 15, 95 );
-    doc.text("Para las columnas esquinadas: pservicio = carga de la edificacion(P)*AT - Columna esquinada:*N de pisos; ", 15, 100);
+    doc.text("Para las columnas esquinadas: pservicio = carga de la edificación(P)*AT - Columna esquinada:*N de pisos; ", 15, 100);
     doc.text("AreaColumna = (pservicio/(0.35*f´c del concreto))", 15, 105 );
 
     doc.setFontSize(12);
     doc.text("Formulas empleadas para calcular el predimensionamiento de las zapatas", 15, 115);
     doc.setFontSize(10);
-    doc.text("Para las zapatas centradas: pservicio = carga de la edificacion(P)*AT - Zapata Centrada:*N de pisos; ", 15, 120);
+    doc.text("Para las zapatas centradas: pservicio = carga de la edificación(P)*AT - Zapata Centrada:*N de pisos; ", 15, 120);
     doc.text("AreaZapata = (pservicio/(tipo de suelo*capacidad admisible))", 15, 125 );
-    doc.text("Para las zapatas excentricas: pservicio = carga de la edificacion(P)*AT - Zapata Excentrica:*N de pisos; ", 15, 130);
+    doc.text("Para las zapatas excéntricas: pservicio = carga de la edificación(P)*AT - Zapata Excéntrica:*N de pisos; ", 15, 130);
     doc.text("AreaZapata = (pservicio/(tipo de suelo*capacidad admisible))", 15, 135 );
-    doc.text("Para las zapatas esquinadas: pservicio = carga de la edificacion(P)*AT - Zapata Esquinada:*N de pisos; ", 15, 140);
+    doc.text("Para las zapatas esquinadas: pservicio = carga de la edificación(P)*AT - Zapata Esquinada:*N de pisos; ", 15, 140);
     doc.text("AreaZapata = (pservicio/(tipo de suelo*capacidad admisible))", 15, 145 );
 
-    //para el metreado de cargas
+    //para el metrado de cargas
 
     doc.setFontSize(12);
     doc.text("Formulas empleadas para calcular el metrado de cargas", 15, 155);
@@ -3319,23 +3319,23 @@ doc.addImage(logo, 'PNG', 10, 10, 28, 8); // Ajusta las coordenadas (10, 10) y e
                   Para las columnas centradas:
                 </p>
                 <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
-                  pservicio = carga de la edificacion(P)*AT - Columna
+                  pservicio = carga de la edificación(P)*AT - Columna
                   Centrada:*N de pisos; <br />
                   AreaColumna = (pservicio/(0.45*f´c del concreto))
                 </p>
                 <p className="font2 text-xs mt-2 text-slate-700 underline dark:text-slate-400">
-                  Para las columnas excentricas:
+                  Para las columnas excéntricas:
                 </p>
                 <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
-                  pservicio = carga de la edificacion(P)*AT - Columna
-                  excentrica:*N de pisos; <br />
+                  pservicio = carga de la edificación(P)*AT - Columna
+                  excéntrica:*N de pisos; <br />
                   AreaColumna = (pservicio/(0.35*f´c del concreto))
                 </p>
                 <p className="font2 text-xs mt-2 text-slate-700 underline dark:text-slate-400">
                   Para las columnas esquinadas:
                 </p>
                 <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
-                  pservicio = carga de la edificacion(P)*AT - Columna
+                  pservicio = carga de la edificación(P)*AT - Columna
                   esquinada:*N de pisos; <br />
                   AreaColumna = (pservicio/(0.35*f´c del concreto))
                 </p>
@@ -3384,8 +3384,8 @@ doc.addImage(logo, 'PNG', 10, 10, 28, 8); // Ajusta las coordenadas (10, 10) y e
             <tfoot></tfoot>
           </table>
           <p className="font2 text-xs">
-            Recomendacion : la altura de la zapataq (50cm) es una altura
-            tentativa, porfavor verificar por punzonamiento.
+            Recomendación : la altura de la zapata (50cm) es una altura
+            tentativa, por favor verificar por punzonamiento.
           </p>
           <button
             className="max-sm:py-0 bg-sky-700 hover:bg-cyan-600 text-white text-xs leading-6 font-medium py-[2px] px-3 rounded-md"
@@ -3443,7 +3443,7 @@ doc.addImage(logo, 'PNG', 10, 10, 28, 8); // Ajusta las coordenadas (10, 10) y e
         <dialog id="my_modal_4" className="modal modal-bottom sm:modal-middle">
           <div className="modal-box rounded-md max-sm:w-[75%] m-auto">
             <h3 className="font-bold text-lg">
-              Formlas para el metrado de cargas
+              Formulas para el metrado de cargas
             </h3>
             <div>
               <p className="font2 text-lg font-bold mt-2 text-slate-700 dark:text-slate-400">
@@ -3572,7 +3572,7 @@ doc.addImage(logo, 'PNG', 10, 10, 28, 8); // Ajusta las coordenadas (10, 10) y e
 
         <div>
           <p className="font2 mt-4 text-xs font-bold">
-            Pisos itermedios (son todos los pisos sin tener en cuenta el ultimo
+            Pisos intermedios (son todos los pisos sin tener en cuenta el ultimo
             ni el primero:)
           </p>
           <div className="overflow-x-auto">

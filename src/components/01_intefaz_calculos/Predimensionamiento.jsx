@@ -380,15 +380,15 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
               Para las columnas centradas:
             </p>
             <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
-              pservicio = carga de la edificacion(P)*AT - Columna Centrada:*N de
+              pservicio = carga de la edificación(P)*AT - Columna Centrada:*N de
               pisos; <br />
               AreaColumna = (pservicio/(0.45*f´c del concreto))
             </p>
             <p className="font2 text-xs mt-2 text-slate-700 underline dark:text-slate-400">
-              Para las columnas excentricas:
+              Para las columnas excéntricas:
             </p>
             <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
-              pservicio = carga de la edificacion(P)*AT - Columna excentrica:*N
+              pservicio = carga de la edificación(P)*AT - Columna excéntrica:*N
               de pisos; <br />
               AreaColumna = (pservicio/(0.35*f´c del concreto))
             </p>
@@ -396,7 +396,7 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
               Para las columnas esquinadas:
             </p>
             <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
-              pservicio = carga de la edificacion(P)*AT - Columna esquinada:*N
+              pservicio = carga de la edificación(P)*AT - Columna esquinada:*N
               de pisos; <br />
               AreaColumna = (pservicio/(0.35*f´c del concreto))
             </p>

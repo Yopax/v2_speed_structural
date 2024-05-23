@@ -12,7 +12,7 @@ function Footer() {
     </div>
   </nav> 
   <aside>
-    <p>Copyright © 2024 - All right reserved by SPEDD SAC.</p>
+    <p>Copyright © 2024 - All right reserved by SPEED SAC.</p>
     <p>Fundado por Barreto Rodriguez Darli.</p>
     
   </aside>
