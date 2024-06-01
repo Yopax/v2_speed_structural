@@ -15,13 +15,13 @@ function Normas() {
           norma="Norma ASCE SEI 41-13"
           enlace="https://drive.google.com/uc?export=download&id=1o1l-SJRfaGSw-qbvA7B1p_sih1uxeJyN"
           img="https://i.imgur.com/5wc3vqq.jpeg"
-          description="ATC 14 (1987) y FEMA 273 (1997) eran ambos documentosseñal. Cada una representada principales puntos de inflexiónen la forma en la profesión se dirigió a la evaluación de losriesgos sísmicos que plantean los edificios existentes."
+          description="ATC 14 (1987) y FEMA 273 (1997) eran ambos documentosseñal. cada una representada principales puntos de inflexiónen la forma en la profesión se dirigió a la evaluación de losriesgos sísmicos que plantean los edificios existentes."
         />
         <CardNorma
           norma="Norma ASCE SEI 41-17"
           enlace="https://drive.google.com/uc?export=download&id=1kaIHcog258Y6mUDK9ztihY66lCj00SeN"
           img="https://i.imgur.com/D9Bhf8O.jpeg"
-          description="Seismic Evaluation and Retrofit of Existing Buildings, Standard ASCE/SEI 41-17, describes deficiency-based and systematic procedures that use performance-based principles to evaluate and retrofit existing buildings to withstand the effects of earthquakes."
+          description="ASCE/SEI Standard 41-17, describe procedimientos sistemáticos basados en las deficiencias que utilizan principios basados en el rendimiento para evaluar y adaptar los edificios existentes para que resistan los efectos de los terremotos."
         />
         <CardNorma
           norma="Norma e-0.10"
@@ -33,7 +33,7 @@ function Normas() {
           norma="Norma e-0.20"
           enlace="https://drive.google.com/uc?export=download&id=1kENVHQSwwKdAUaTqk9rBjQ79vT_sV3i7"
           img="https://image.slidesharecdn.com/norma-e-020-130323160730-phpapp02/85/norma-e020-1-320.jpg?cb=1665729996"
-          description="Las edificaciones y todas sus partes deberán ser capaces de resistir las cargas que se les imponga como consecuencia de su uso previsto. Estas actuarán en las combinaciones prescritas y no deben causar esfuerzos ni deformaciones que excedan los señalado."
+          description="Las edificaciones y todas sus partes deberán ser capaces de resistir las cargas que se les imponga como consecuencia de su uso previsto. estas actuarán en las combinaciones prescritas y no deben causar esfuerzos ni deformaciones que excedan los señalado."
         />
         <CardNorma 
         norma="Norma e-0.30 (2018)"

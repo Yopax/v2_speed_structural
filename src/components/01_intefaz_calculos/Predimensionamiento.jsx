@@ -486,7 +486,7 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
       <div className="w-[75%] m-auto">
         <hr className=" my-2" />
         <p className="text-lg max-[420px]:text-center text-emerald-700 font-bold mt-6 mb-2">
-          02. Metrado de Cargas
+          02. Metrado de Cargas para un análisis y diseño sísmico
         </p>
         <p className="text-sm text-slate-700 dark:text-slate-300">
           El metrado de cargas es una técnica con la cual se estiman las cargas
@@ -501,7 +501,7 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
         <div className="flex my-8 w-full items-center justify-center">
           <img
             className="h-[280px] w-[55%] max-sm:w-full"
-            src="https://i.imgur.com/2VWy5cT.jpeg"
+            src="https://i.imgur.com/S8M9phh.png"
             alt="referencia"
             />
         </div>
