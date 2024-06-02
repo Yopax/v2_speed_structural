@@ -4,7 +4,7 @@ import CardNorma from "./CardNorma";
 function Normas() {
   return (
     <>
-      <div className="grid max-sm:grid max-sm:justify-center space-x-4 mx-20 max-sm:mx-10 max-sm:grid-cols-1  grid-cols-4 w-auto">
+      <div className="grid max-sm:flex-col max-sm:justify-center space-x-4 max-sm:space-x-0 mx-20 max-sm:mx-10 max-sm:grid-cols-1  grid-cols-4 w-auto">
         <CardNorma
           norma="Norma ACI 318-14"
           enlace="https://drive.google.com/uc?export=download&id=1T-wYVkZtQ2xprFC1eRqxprocpMl9f9My"
@@ -15,7 +15,7 @@ function Normas() {
           norma="Norma ASCE SEI 41-13"
           enlace="https://drive.google.com/uc?export=download&id=1o1l-SJRfaGSw-qbvA7B1p_sih1uxeJyN"
           img="https://i.imgur.com/5wc3vqq.jpeg"
-          description="ATC 14 (1987) y FEMA 273 (1997) eran ambos documentosseñal. cada una representada principales puntos de inflexiónen la forma en la profesión se dirigió a la evaluación de losriesgos sísmicos que plantean los edificios existentes."
+          description="Esta norma para la Evaluación Sísmica y la Rehabilitación de Edificios Existentes, especifica las disposiciones aplicables a nivel nacional para la evaluación sísmica y la rehabilitación de edificios."
         />
         <CardNorma
           norma="Norma ASCE SEI 41-17"
