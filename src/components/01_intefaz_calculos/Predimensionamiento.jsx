@@ -3,57 +3,59 @@ import React from "react";
 import { useGeneralContext } from "@/app/context/GeneralContext";
 import { useEffect, useState } from "react";
 
-const commonInputClasses = " dark:text-white text-gray-700 border border-solid rounded-md justify-center items-center text-center border-gray-300 w-[100px] text-xs py-1";
+const commonInputClasses =
+  " dark:text-white text-gray-700 border border-solid rounded-md justify-center items-center text-center border-gray-300 w-[100px] text-xs py-1";
 const claseOne = "font-medium text-gray-900 font justify-between  text-xs mx-2";
 const subTitle = "text-xs text-white font-bold my-2";
 const claseTwo = "text-xs text-white font-medium mx-2 ";
-const claseDivOne = "flex flex-col mx-auto text-white items-center justify-center text-center m-2 rounded-md h-72 w-44 bg-emerald-700 max-[425px]:w-full"
-const claseDivTwo = "flex flex-col mx-auto text-white items-center justify-center text-center m-2 rounded-md h-72 w-44 bg-sky-700 max-sm:bg-sky-700 max-[425px]:w-full"
+const claseDivOne =
+  "flex flex-col mx-auto text-white items-center justify-center text-center m-2 rounded-md h-72 w-44 bg-emerald-700 max-[425px]:w-full";
+const claseDivTwo =
+  "flex flex-col mx-auto text-white items-center justify-center text-center m-2 rounded-md h-72 w-44 bg-sky-700 max-sm:bg-sky-700 max-[425px]:w-full";
 
 //Formula para calcular la losa aligerada para las tres formas
-function Predimensionamiento() {  
-
+function Predimensionamiento() {
   const { inputValue7, updateInputValue7 } = useGeneralContext();
   const { inputValue8, updateInputValue8 } = useGeneralContext();
   const { inputValue9, updateInputValue9 } = useGeneralContext();
   const { inputValue10, updateInputValue10 } = useGeneralContext();
   const { inputValue11, updateInputValue11 } = useGeneralContext();
   const { inputValue12, updateInputValue12 } = useGeneralContext();
-  const {perimetroA, updatePerimetroA} = useGeneralContext();
-  const {perimetroB, updatePerimetroB} = useGeneralContext();
-  const {servicio, updateServicio} = useGeneralContext();
-  const {inputFc, updateInputFc} = useGeneralContext();
-  const {inputValue2, updateInputValue2} = useGeneralContext();
-  const {tipoSuelo, updateTipoSuelo} = useGeneralContext();
-  const {capacidadAdmisible, updatCapacidadAdmisible} = useGeneralContext();
-  const {np, updateNp} = useGeneralContext();
-  const {ca, updateCa} = useGeneralContext();
-  const {dx, updateDx} = useGeneralContext();
-  const {dy, updateDy} = useGeneralContext();
-  const {pec, updatePec} = useGeneralContext();
-  const {nc, updateNc} = useGeneralContext();
-  const {dx_col, updateDx_col} = useGeneralContext();
-  const {dy_col, updateDy_col} = useGeneralContext();
-  const {l_col, updateL_col} = useGeneralContext();
-  const {nvx, updateNvx} = useGeneralContext();
-  const {dx_vgx, updateDx_vgx} = useGeneralContext();
-  const {dy_vgx, updateDy_vgx} = useGeneralContext();
-  const {l_vgx, updateL_vgx} = useGeneralContext();
-  const {nvy, updateNvy} = useGeneralContext();
-  const {dx_vgy, updateDx_vgy} = useGeneralContext();
-  const {dy_vgy, updateDy_vgy} = useGeneralContext();
-  const {l_vgy, updateL_vgy} = useGeneralContext();
-  const {cv, updateCv} = useGeneralContext();
-  const {cvr, updateCvr} = useGeneralContext();
-  const {dx_t, updateDx_t} = useGeneralContext();
-  const {dy_t, updateDy_t} = useGeneralContext();
-  const {inputValue4, updateInputValue4} = useGeneralContext();
-  const {inputValue5, updateInputValue5} = useGeneralContext();
-  const {inputValue6, updateInputValue6} = useGeneralContext();
-  const {inputValue1, updateInputValue1} = useGeneralContext();
-  const {ocupacionUso, updateOcupacionUso} = useGeneralContext();
+  const { perimetroA, updatePerimetroA } = useGeneralContext();
+  const { perimetroB, updatePerimetroB } = useGeneralContext();
+  const { servicio, updateServicio } = useGeneralContext();
+  const { inputFc, updateInputFc } = useGeneralContext();
+  const { inputValue2, updateInputValue2 } = useGeneralContext();
+  const { tipoSuelo, updateTipoSuelo } = useGeneralContext();
+  const { capacidadAdmisible, updatCapacidadAdmisible } = useGeneralContext();
+  const { np, updateNp } = useGeneralContext();
+  const { ca, updateCa } = useGeneralContext();
+  const { dx, updateDx } = useGeneralContext();
+  const { dy, updateDy } = useGeneralContext();
+  const { pec, updatePec } = useGeneralContext();
+  const { nc, updateNc } = useGeneralContext();
+  const { dx_col, updateDx_col } = useGeneralContext();
+  const { dy_col, updateDy_col } = useGeneralContext();
+  const { l_col, updateL_col } = useGeneralContext();
+  const { nvx, updateNvx } = useGeneralContext();
+  const { dx_vgx, updateDx_vgx } = useGeneralContext();
+  const { dy_vgx, updateDy_vgx } = useGeneralContext();
+  const { l_vgx, updateL_vgx } = useGeneralContext();
+  const { nvy, updateNvy } = useGeneralContext();
+  const { dx_vgy, updateDx_vgy } = useGeneralContext();
+  const { dy_vgy, updateDy_vgy } = useGeneralContext();
+  const { l_vgy, updateL_vgy } = useGeneralContext();
+  const { cv, updateCv } = useGeneralContext();
+  const { cvr, updateCvr } = useGeneralContext();
+  const { dx_t, updateDx_t } = useGeneralContext();
+  const { dy_t, updateDy_t } = useGeneralContext();
+  const { inputValue4, updateInputValue4 } = useGeneralContext();
+  const { inputValue5, updateInputValue5 } = useGeneralContext();
+  const { inputValue6, updateInputValue6 } = useGeneralContext();
+  const { inputValue1, updateInputValue1 } = useGeneralContext();
+  const { ocupacionUso, updateOcupacionUso } = useGeneralContext();
 
-// PRE - LOSAS
+  // PRE - LOSAS
   const [roundedValue, setRoundedValue] = useState(0);
 
   useEffect(() => {
@@ -62,7 +64,12 @@ function Predimensionamiento() {
       if (losa === 0) {
         setRoundedValue(losa);
       } else {
-        const distances = [Math.abs(losa - 30), Math.abs(losa - 25), Math.abs(losa - 20), Math.abs(losa - 17)];
+        const distances = [
+          Math.abs(losa - 30),
+          Math.abs(losa - 25),
+          Math.abs(losa - 20),
+          Math.abs(losa - 17),
+        ];
         const minDistance = Math.min(...distances);
         if (minDistance === Math.abs(losa - 30)) {
           setRoundedValue(30);
@@ -78,97 +85,107 @@ function Predimensionamiento() {
     calculateRoundedValue();
   }, [inputValue7]);
 
-// 	Losa Prefabricada Pretensada
-const [roundedValue2, setRoundedValue2] = useState(0);
+  // 	Losa Prefabricada Pretensada
+  const [roundedValue2, setRoundedValue2] = useState(0);
 
-useEffect(() => {
-  const losa = inputValue7 / 28;
-  const calculateRoundedValue2 = () => {
-    if (losa === 0) {
-      setRoundedValue2(losa);
-    } else {
-      const distances = [Math.abs(losa - 30), Math.abs(losa - 25), Math.abs(losa - 20), Math.abs(losa - 17)];
-      const minDistance = Math.min(...distances);
-      if (minDistance === Math.abs(losa - 30)) {
-        setRoundedValue2(30);
-      } else if (minDistance === Math.abs(losa - 25)) {
-        setRoundedValue2(25);
-      } else if (minDistance === Math.abs(losa - 20)) {
-        setRoundedValue2(20);
+  useEffect(() => {
+    const losa = inputValue7 / 28;
+    const calculateRoundedValue2 = () => {
+      if (losa === 0) {
+        setRoundedValue2(losa);
       } else {
-        setRoundedValue2(17);
+        const distances = [
+          Math.abs(losa - 30),
+          Math.abs(losa - 25),
+          Math.abs(losa - 20),
+          Math.abs(losa - 17),
+        ];
+        const minDistance = Math.min(...distances);
+        if (minDistance === Math.abs(losa - 30)) {
+          setRoundedValue2(30);
+        } else if (minDistance === Math.abs(losa - 25)) {
+          setRoundedValue2(25);
+        } else if (minDistance === Math.abs(losa - 20)) {
+          setRoundedValue2(20);
+        } else {
+          setRoundedValue2(17);
+        }
       }
-    }
-  };
-  calculateRoundedValue2();
-}, [inputValue7]);
+    };
+    calculateRoundedValue2();
+  }, [inputValue7]);
 
-// 	Losa Maciza
-const [roundedValue3, setRoundedValue3] = useState(0);
+  // 	Losa Maciza
+  const [roundedValue3, setRoundedValue3] = useState(0);
 
-useEffect(() => {
-  const losa = inputValue7 / 30;
-  const calculateRoundedValue3 = () => {
-    if (losa === 0) {
-      setRoundedValue3(losa);
-    } else {
-      const distances = [Math.abs(losa - 30), Math.abs(losa - 25), Math.abs(losa - 20), Math.abs(losa - 17)];
-      const minDistance = Math.min(...distances);
-      if (minDistance === Math.abs(losa - 30)) {
-        setRoundedValue3(30);
-      } else if (minDistance === Math.abs(losa - 25)) {
-        setRoundedValue3(25);
-      } else if (minDistance === Math.abs(losa - 20)) {
-        setRoundedValue3(20);
+  useEffect(() => {
+    const losa = inputValue7 / 30;
+    const calculateRoundedValue3 = () => {
+      if (losa === 0) {
+        setRoundedValue3(losa);
       } else {
-        setRoundedValue3(17);
+        const distances = [
+          Math.abs(losa - 30),
+          Math.abs(losa - 25),
+          Math.abs(losa - 20),
+          Math.abs(losa - 17),
+        ];
+        const minDistance = Math.min(...distances);
+        if (minDistance === Math.abs(losa - 30)) {
+          setRoundedValue3(30);
+        } else if (minDistance === Math.abs(losa - 25)) {
+          setRoundedValue3(25);
+        } else if (minDistance === Math.abs(losa - 20)) {
+          setRoundedValue3(20);
+        } else {
+          setRoundedValue3(17);
+        }
       }
-    }
-  };
-  calculateRoundedValue3();
-}, [inputValue7]);
+    };
+    calculateRoundedValue3();
+  }, [inputValue7]);
 
-// Losa Maciza Bidireccional
+  // Losa Maciza Bidireccional
 
-const perimetro = (perimetroA * 2 + perimetroB * 2) / 140;
-const perimetroRedondeado = perimetro.toFixed(2);
-const perimetroNumerico = parseFloat(perimetroRedondeado);
+  const perimetro = (perimetroA * 2 + perimetroB * 2) / 140;
+  const perimetroRedondeado = perimetro.toFixed(2);
+  const perimetroNumerico = parseFloat(perimetroRedondeado);
 
-//PRE - VIGAS
-const vigax = inputValue8/10;
-const vigay = inputValue9/10;
+  //PRE - VIGAS
+  const vigax = inputValue8 / 10;
+  const vigay = inputValue9 / 10;
 
-//PRE - COLUMNAS
+  //PRE - COLUMNAS
 
-//columna centreda
-const pservicio = servicio*inputValue10*inputValue2;
-const areaColumna = (pservicio/(0.45*inputFc))
-const acolumnofinal = Math.ceil(Math.sqrt(areaColumna) / 5) * 5
-const acolumnofinalFormateada = acolumnofinal.toFixed(2);
+  //columna centreda
+  const pservicio = servicio * inputValue10 * inputValue2;
+  const areaColumna = pservicio / (0.45 * inputFc);
+  const acolumnofinal = Math.ceil(Math.sqrt(areaColumna) / 5) * 5;
+  const acolumnofinalFormateada = acolumnofinal.toFixed(2);
 
-//columna esquinada
-  const pservicio2 = servicio*inputValue11*inputValue2;
-  const areaColumna2 = (pservicio2/(0.35*inputFc))
-  const acolumnofinal2 = Math.ceil(Math.sqrt(areaColumna2) / 5) * 5
+  //columna esquinada
+  const pservicio2 = servicio * inputValue11 * inputValue2;
+  const areaColumna2 = pservicio2 / (0.35 * inputFc);
+  const acolumnofinal2 = Math.ceil(Math.sqrt(areaColumna2) / 5) * 5;
 
- //columna excentrica
- const pservicio3 = servicio*inputValue12*inputValue2;
- const areaColumna3 = (pservicio3/(0.35*inputFc))
- const acolumnofinal3 = Math.ceil(Math.sqrt(areaColumna3) / 5) * 5
+  //columna excentrica
+  const pservicio3 = servicio * inputValue12 * inputValue2;
+  const areaColumna3 = pservicio3 / (0.35 * inputFc);
+  const acolumnofinal3 = Math.ceil(Math.sqrt(areaColumna3) / 5) * 5;
 
- //PRE - ZAPATAS
+  //PRE - ZAPATAS
 
-   //Zapatacentrada
-   const zapatacentrada = pservicio/(tipoSuelo*capacidadAdmisible);
-   const azapatacentrada = Math.ceil(Math.sqrt(zapatacentrada) / 5) * 5
- 
-   //Zapataesquinada
-   const zapataesquinada = pservicio2/(tipoSuelo*capacidadAdmisible);
-   const azapataesquinada = Math.ceil(Math.sqrt(zapataesquinada) / 5) * 5
- 
-   //Zapataexcentrica
-   const zapataexcentrica = pservicio3/(tipoSuelo*capacidadAdmisible);
-   const azapataexcentrica = Math.ceil(Math.sqrt(zapataexcentrica) / 5) * 5
+  //Zapatacentrada
+  const zapatacentrada = pservicio / (tipoSuelo * capacidadAdmisible);
+  const azapatacentrada = Math.ceil(Math.sqrt(zapatacentrada) / 5) * 5;
+
+  //Zapataesquinada
+  const zapataesquinada = pservicio2 / (tipoSuelo * capacidadAdmisible);
+  const azapataesquinada = Math.ceil(Math.sqrt(zapataesquinada) / 5) * 5;
+
+  //Zapataexcentrica
+  const zapataexcentrica = pservicio3 / (tipoSuelo * capacidadAdmisible);
+  const azapataexcentrica = Math.ceil(Math.sqrt(zapataexcentrica) / 5) * 5;
 
   return (
     <>
@@ -356,9 +373,13 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
                   <th>Altura</th>
                   <td>{vigax}cm</td>
                   <td>{vigay}cm</td>
-                  <td>{acolumnofinal}cm</td>
-                  <td>{acolumnofinal2}cm</td>
-                  <td>{acolumnofinal3}cm</td>
+                  <td>{isNaN(acolumnofinal) ? "0cm" : `${acolumnofinal}cm`}</td>
+                  <td>
+                    {isNaN(acolumnofinal2) ? "0cm" : `${acolumnofinal2}cm`}
+                  </td>
+                  <td>
+                    {isNaN(acolumnofinal3) ? "0cm" : `${acolumnofinal3}cm`}
+                  </td>
                 </tr>
               </tbody>
               <tbody>
@@ -366,9 +387,13 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
                   <th>Base</th>
                   <td>{vigax / 2}cm</td>
                   <td>{vigay / 2}cm</td>
-                  <td>{acolumnofinal}cm</td>
-                  <td>{acolumnofinal2}cm</td>
-                  <td>{acolumnofinal3}cm</td>
+                  <td>{isNaN(acolumnofinal) ? "0cm" : `${acolumnofinal}cm`}</td>
+                  <td>
+                    {isNaN(acolumnofinal2) ? "0cm" : `${acolumnofinal2}cm`}
+                  </td>
+                  <td>
+                    {isNaN(acolumnofinal3) ? "0cm" : `${acolumnofinal3}cm`}
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -453,15 +478,31 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
                 </tr>
                 <tr>
                   <th>size x</th>
-                  <td>{azapatacentrada}cm</td>
-                  <td>{azapataesquinada}cm</td>
-                  <td>{azapataexcentrica}cm</td>
+                  <td>
+                    {isNaN(azapatacentrada) ? "0cm" : `${azapatacentrada}cm`}
+                  </td>
+                  <td>
+                    {isNaN(azapataesquinada) ? "0cm" : `${azapataesquinada}cm`}
+                  </td>
+                  <td>
+                    {isNaN(azapataexcentrica)
+                      ? "0cm"
+                      : `${azapataexcentrica}cm`}
+                  </td>
                 </tr>
                 <tr>
                   <th>size y</th>
-                  <td>{azapatacentrada}cm</td>
-                  <td>{azapataesquinada}cm</td>
-                  <td>{azapataexcentrica}cm</td>
+                  <td>
+                    {isNaN(azapatacentrada) ? "0cm" : `${azapatacentrada}cm`}
+                  </td>
+                  <td>
+                    {isNaN(azapataesquinada) ? "0cm" : `${azapataesquinada}cm`}
+                  </td>
+                  <td>
+                    {isNaN(azapataexcentrica)
+                      ? "0cm"
+                      : `${azapataexcentrica}cm`}
+                  </td>
                 </tr>
               </tbody>
               <tfoot></tfoot>
@@ -491,17 +532,22 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
           <p className="max-sm:hidden">-para un análisis y diseño sísmico</p>
         </h2>
         <p className="text-sm text-slate-700 max-sm:hidden dark:text-slate-300">
-        El metrado de cargas es una técnica con la cual se estiman las cargas actuantes sobre los distintos elementos estructurales que componen al edificio. Este proceso es aproximado ya que por lo general se desprecian los efectos hiperestáticos producidos por los momentos flectores, salvo que estos sean muy importantes. Ademas, se emplearon formulas y criterios del ingeniero Angel san bartolome de su libro `Análisis de edificios`.
+          El metrado de cargas es una técnica con la cual se estiman las cargas
+          actuantes sobre los distintos elementos estructurales que componen al
+          edificio. Este proceso es aproximado ya que por lo general se
+          desprecian los efectos hiperestáticos producidos por los momentos
+          flectores, salvo que estos sean muy importantes. Ademas, se emplearon
+          formulas y criterios del ingeniero Angel san bartolome de su libro
+          `Análisis de edificios`.
         </p>
         <div className="flex w-full space-y-2">
-        <div className="flex my-8 w-full items-center justify-center">
+          <div className="flex my-8 w-full items-center justify-center">
             <img
-            className="h-[280px]  w-[55%] max-sm:w-full"
-            src="https://i.imgur.com/4uDHvnv.png"
-            alt="referencia"
+              className="h-[280px]  w-[55%] max-sm:w-full"
+              src="https://i.imgur.com/4uDHvnv.png"
+              alt="referencia"
             />
-            
-        </div>
+          </div>
         </div>
       </div>
       <div className="w-[75%] max-sm:w-[85%] m-auto grid grid-cols-5 max-[1024px]:grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1 mt-8 mb-8 ">
