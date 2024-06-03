@@ -8,6 +8,7 @@ const claseOne = "font-medium text-gray-900 font justify-between  text-xs mx-2";
 const subTitle = "text-xs text-white font-bold my-2";
 const claseTwo = "text-xs text-white font-medium mx-2 ";
 const claseDivOne = "flex flex-col mx-auto text-white items-center justify-center text-center m-2 rounded-md h-72 w-44 bg-emerald-700 max-[425px]:w-full"
+const claseDivTwo = "flex flex-col mx-auto text-white items-center justify-center text-center m-2 rounded-md h-72 w-44 bg-sky-700 max-sm:bg-sky-700 max-[425px]:w-full"
 
 //Formula para calcular la losa aligerada para las tres formas
 function Predimensionamiento() {  
@@ -171,10 +172,10 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
 
   return (
     <>
-      <div className="w-[75%] m-auto">
+      <div className="w-[75%] max-sm:w-[85%] m-auto">
         <hr className="my-2" />
-        <div className="flex max-[420px]:flex-col space-x-8 max-[420px]:space-x-0 ">
-          <div className="my-2 w-[590px] max-[420px]:w-full bg-emerald-700  p-4 rounded-md">
+        <div className="flex max-[425px]:flex-col space-x-8 max-[425px]:space-x-0 ">
+          <div className="my-2 w-[590px] max-[425px]:w-full bg-emerald-700  p-4 rounded-md">
             <p className={subTitle}>Losas - Ingresa los datos solicitados:</p>
             <div className="flex my-4 justify-between">
               <label className={claseOne}>Ln - Losa aligerada:</label>
@@ -237,7 +238,7 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
               asumimos {roundedValue} cm y para el ultimo piso consideramos{" "}
               {roundedValue - 5}cm.
             </p>
-            <p className="text-xs mt-2 text-slate-600 dark:text-slate-300">
+            <p className="text-xs mt-2 text-slate-600 max-sm:hidden dark:text-slate-300">
               Las formulas utilizadas para calcular las losas fueron las
               siguientes, para la losa aligerada: ln/25, para la Losa
               Prefabricada Pretensada: ln/28, para la losa maciza: ln/30, para
@@ -246,10 +247,10 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
           </div>
         </div>
       </div>
-      <div className="w-[75%] m-auto">
+      <div className="w-[75%] max-sm:w-[85%] m-auto">
         <hr className="my-2" />
-        <div className="flex max-[420px]:flex-col space-x-8 max-[420px]:space-x-0">
-          <div className="my-2 w-[390px] max-[420px]:w-full bg-emerald-700  p-4 rounded-md">
+        <div className="flex max-[425px]:flex-col space-x-8 max-[425px]:space-x-0">
+          <div className="my-2 w-[390px] max-[425px]:w-full bg-emerald-700  p-4 rounded-md">
             <p className={subTitle}>Vigas- Ingresa los datos solicitados:</p>
 
             <div className="flex my-4 justify-between">
@@ -371,31 +372,31 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
                 </tr>
               </tbody>
             </table>
-            <p className=" font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
+            <p className=" font2 text-xs mt-2 max-sm:hidden text-slate-600 dark:text-slate-300">
               Las formulas utilizadas para calcular las vigas es ta dada por,
               para la altura: ln/10 y para la base: la altura /2, esto aplica
               para ambas direcciones.
             </p>
-            <p className="font2 text-xs mt-2 text-slate-700 underline dark:text-slate-400">
+            <p className="font2 text-xs mt-2 max-sm:hidden text-slate-700 underline dark:text-slate-400">
               Para las columnas centradas:
             </p>
-            <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
+            <p className="font2 text-xs mt-2 max-sm:hidden text-slate-600 dark:text-slate-300">
               pservicio = carga de la edificación(P)*AT - Columna Centrada:*N de
               pisos; <br />
               AreaColumna = (pservicio/(0.45*f´c del concreto))
             </p>
-            <p className="font2 text-xs mt-2 text-slate-700 underline dark:text-slate-400">
+            <p className="font2 text-xs mt-2 max-sm:hidden text-slate-700 underline dark:text-slate-400">
               Para las columnas excéntricas:
             </p>
-            <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
+            <p className="font2 text-xs mt-2 max-sm:hidden text-slate-600 dark:text-slate-300">
               pservicio = carga de la edificación(P)*AT - Columna excéntrica:*N
               de pisos; <br />
               AreaColumna = (pservicio/(0.35*f´c del concreto))
             </p>
-            <p className="font2 text-xs mt-2 text-slate-700 underline dark:text-slate-400">
+            <p className="font2 text-xs mt-2 max-sm:hidden text-slate-700 underline dark:text-slate-400">
               Para las columnas esquinadas:
             </p>
-            <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-300">
+            <p className="font2 text-xs mt-2 max-sm:hidden text-slate-600 dark:text-slate-300">
               pservicio = carga de la edificación(P)*AT - Columna esquinada:*N
               de pisos; <br />
               AreaColumna = (pservicio/(0.35*f´c del concreto))
@@ -403,10 +404,10 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
           </div>
         </div>
       </div>
-      <div className="w-[75%] m-auto">
+      <div className="w-[75%] max-sm:w-[85%] m-auto">
         <hr className="my-2" />
-        <div className="flex max-[420px]:flex-col space-x-8 max-[420px]:space-x-0 ">
-          <div className="my-2 w-[660px] max-[420px]:w-full bg-emerald-700  p-4 rounded-md">
+        <div className="flex max-[425px]:flex-col space-x-8 max-[425px]:space-x-0 ">
+          <div className="my-2 w-[660px] max-[425px]:w-full bg-emerald-700  p-4 rounded-md">
             <p className={subTitle}>Zapatas - Ingresa los datos solicitados:</p>
             <div className="flex my-4 justify-between">
               <label className={claseOne}>Coeficiente del suelo(k):</label>
@@ -469,11 +470,11 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
               Recomendación : la altura de la zapata sera de (50cm) es una
               altura tentativa, por favor verificar por punzonamiento.
             </p>
-            <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-400">
+            <p className="font2 max-sm:hidden text-xs mt-2 text-slate-600 dark:text-slate-400">
               La formula para calcular las zapatas es la siguiente: Area de de
               la zapata = pservicio/(coeficiente del suelo * la carga admisible)
             </p>
-            <p className="font2 text-xs mt-2 text-slate-600 dark:text-slate-400">
+            <p className="font2 max-sm:hidden text-xs mt-2 text-slate-600 dark:text-slate-400">
               Siendo pservicio, el calculo para cada tipo de columna, ejem: si
               se requiere calcular la zapata centrada se debe utilizar el
               pservicio de la columna centrada, este dato el programa ya lo
@@ -483,32 +484,28 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
           </div>
         </div>
       </div>
-      <div className="w-[75%] m-auto">
+      <div className="w-[75%] max-sm:w-[85%] m-auto">
         <hr className=" my-2" />
-        <p className="text-lg max-[420px]:text-center text-emerald-700 font-bold mt-6 mb-2">
-          02. Metrado de Cargas para un análisis y diseño sísmico
-        </p>
-        <p className="text-sm text-slate-700 dark:text-slate-300">
-          El metrado de cargas es una técnica con la cual se estiman las cargas
-          actuantes sobre los distintos elementos estructurales que componen al
-          edificio. Este proceso es aproximado ya que por lo general se
-          desprecian los efectos hiperestáticos producidos por los momentos
-          flectores, salvo que estos sean muy importantes. Ademas, se emplearon
-          formulas y criterios del ingeniero Angel san bartolome de su libro
-          `Análisis de edificios`.
+        <h2 className="flex text-lg max-[425px]:text-center text-sky-700 max-sm:text-sky-700 font-bold mt-6 mb-2">
+          <p className="max-sm:text-center max-sm:mx-auto">Metrado de Cargas</p>
+          <p className="max-sm:hidden">-para un análisis y diseño sísmico</p>
+        </h2>
+        <p className="text-sm text-slate-700 max-sm:hidden dark:text-slate-300">
+        El metrado de cargas es una técnica con la cual se estiman las cargas actuantes sobre los distintos elementos estructurales que componen al edificio. Este proceso es aproximado ya que por lo general se desprecian los efectos hiperestáticos producidos por los momentos flectores, salvo que estos sean muy importantes. Ademas, se emplearon formulas y criterios del ingeniero Angel san bartolome de su libro `Análisis de edificios`.
         </p>
         <div className="flex w-full space-y-2">
         <div className="flex my-8 w-full items-center justify-center">
-          <img
-            className="h-[280px] w-[55%] max-sm:w-full"
-            src="https://i.imgur.com/S8M9phh.png"
+            <img
+            className="h-[280px]  w-[55%] max-sm:w-full"
+            src="https://i.imgur.com/4uDHvnv.png"
             alt="referencia"
             />
+            
         </div>
         </div>
       </div>
-      <div className="w-[75%] m-auto grid grid-cols-5 max-[1024px]:grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1 mt-8 mb-8 ">
-        <div className={claseDivOne}>
+      <div className="w-[75%] max-sm:w-[85%] m-auto grid grid-cols-5 max-[1024px]:grid-cols-3 max-[768px]:grid-cols-2 max-[425px]:grid-cols-1 mt-8 mb-8 ">
+        <div className={claseDivTwo}>
           <p className="mb-2">Paños</p>
           <label className={claseTwo}>Numero de paños:</label>
           <input
@@ -544,7 +541,7 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
             type="number"
           />
         </div>
-        <div className={claseDivOne}>
+        <div className={claseDivTwo}>
           <p>Columnas</p>
           <label className={claseTwo}>Peso especifico - concreto:</label>
           <input
@@ -587,7 +584,7 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
             type="number"
           />
         </div>
-        <div className={claseDivOne}>
+        <div className={claseDivTwo}>
           <p className="mb-10">Vigas en x</p>
           <label className={claseTwo}>Numero de vigas en x :</label>
           <input
@@ -622,7 +619,7 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
             onChange={(e) => updateL_vgx(e.target.value)}
           />
         </div>
-        <div className={claseDivOne}>
+        <div className={claseDivTwo}>
           <p className="mb-10">Vigas en y</p>
           <label className={claseTwo}>Numero de vigas en y :</label>
           <input
@@ -657,7 +654,7 @@ const acolumnofinalFormateada = acolumnofinal.toFixed(2);
             onChange={(e) => updateL_vgy(e.target.value)}
           />
         </div>
-        <div className={claseDivOne}>
+        <div className={claseDivTwo}>
           <p className="mb-2">Carga Viva</p>
           <label className={claseTwo}>CV techo ultimo piso :</label>
           <input

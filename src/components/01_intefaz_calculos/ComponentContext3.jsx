@@ -3188,9 +3188,9 @@ doc.addImage(logo, 'PNG', 10, 10, 28, 8); // Ajusta las coordenadas (10, 10) y e
 
 
   return (
-    <div className="border m-auto w-[55%] max-sm:w-[75%] max-sm:p-4 p-8 rounded-lg mb-6">
+    <div className="border m-auto w-[55%] max-sm:w-[85%] max-sm:p-4 p-8 rounded-lg mb-6">
       <div>
-        <h5 className="text-center m-auto max-sm:text-xs max-sm:w-[142px] text-sm font-medium text-white w-[166px] px-2 bg-emerald-700 rounded-md">
+        <h5 className="text-center m-auto max-sm:text-xs max-sm:w-[142px] text-sm font-medium text-white w-[166px] px-2 bg-sky-700 rounded-md">
           Resultados Generales
         </h5>
         
